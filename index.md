@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+## FoodBook
 
-You can use the [editor on GitHub](https://github.com/bariksek/FoodBook/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Aplikacja ma za zadanie wspomagać użytkowników przy wyborze śniadania, obiadu, kolacji lub deseru do przygotowania. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Użytkownik może: 
+zaznaczać produkty, które posiada w swojej lodówce, a program ma za zadanie wybrać przepis, który w największym stopniu będzie pokrywał się z produktami przez niego podanymi. 
+zapisać wyszukane danie w zakładce “Ulubione”
+zaznaczać dany przepis jako zrobiony po czym w innej zakładce pojawia się historia z podaną godziną i dniem przygotowania posiłków. 
+w przypadku przeoczenia rekomendowanego przepisu przez aplikację, osoba korzystająca z “FoodBook” znajdzie poprzednio przeglądane przepisy w zakładce Historia.
 
-### Markdown
+Użytkownik rejestruje się do aplikacji poprzez ręczne wpisanie loginu i hasła. Dane o koncie użytkownika przechowywane będą przy użyciu bazy danych Google Firebase. 
+Aplikacja będzie w języku angielskim.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bariksek/FoodBook/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Dane na temat produktów jak i przepisów pobierane będą z API udostępnionego przez stronę spoonacular.com. Pomocą przy organizacji prac projektowych nad aplikacją będzie platforma Trello, a czas realizacji monitorowany będzie poprzez platformę Toggl.  
