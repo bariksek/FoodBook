@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations'; // important, animation
 
 
-@Component({
+@Component({  // don't touch this section. It is responsible for animation of the list.
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
@@ -32,8 +32,10 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
 
   ]
 })
+
 export class SearchComponent implements OnInit {
 
+  // variables
   itemCount;
   buttonText = 'Add an product';
   productText = '';
@@ -41,16 +43,20 @@ export class SearchComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.itemCount = this.products.length;
+    this.itemCount = this.products.length; // on init count products
   }
 
   addItem() {
-    this.products.push(this.productText);
-    this.productText = '';
-    this.itemCount = this.products.length;
+    if (this.productText === '') {} else { // if chosen product is empty do nothing
+    this.products.push(this.productText);  // else add to the array
+    this.productText = ''; // reset productText field
+    this.itemCount = this.products.length; // item count++
+  }
+
   }
 
   removeItem(i) {
     this.products.splice(i, 1);
+    this.itemCount = this.products.length;
   }
 }
