@@ -45,9 +45,12 @@ export class SearchComponent implements OnInit {
   }
 
   addItem() {
+    if (this.productText === '') {} else {
     this.products.push(this.productText);
     this.productText = '';
     this.itemCount = this.products.length;
+  }
+
   }
 
   removeItem(i) {
