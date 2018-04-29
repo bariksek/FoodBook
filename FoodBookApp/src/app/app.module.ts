@@ -19,7 +19,7 @@ import { SearchComponent } from './search/search.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule // added for animation purposes
   ],
   providers: [],
   bootstrap: [AppComponent]
