@@ -1,0 +1,24 @@
+input.btn {
+    border: 0;
+    display:block;
+    padding:1em 3em;
+    background:#A5F883; //button color Add an product
+    color:#003A61;
+    margin-bottom:1em;
+    cursor:pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+}
+
+.color-light {
+  background: #57B3F1; //color below
+}
+
+.container2 {
+  display: grid;
+  grid-template-columns: 50% auto;
+}
