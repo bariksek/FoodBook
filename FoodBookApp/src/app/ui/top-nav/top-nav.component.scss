@@ -15,3 +15,8 @@ input.txt {
 button.margin{
   margin-right:5px;
 }
+.desktop-hide{ display: none; }
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .mobile-hide{ display: none; }
+}

@@ -30,11 +30,36 @@ p{
 
 .buttons {
   margin:auto;
-  grid-gap:2em;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .rcorners {
   border-radius: 25px;
 }
+
+@media screen and (min-width: 736px) {
+
+  .buttons {
+    margin:auto;
+    grid-gap:2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  }
+
+@media all and (max-width: 1200px) {
+  p {
+      font-size: 1.5em;
+  }
+}
+@media all and (max-width: 1000px) {
+  p {
+      font-size: 1.2em;
+      }
+  }
+@media all and (max-width: 500px) {
+  p {
+      font-size: 0.8em;
+      }
+  }
