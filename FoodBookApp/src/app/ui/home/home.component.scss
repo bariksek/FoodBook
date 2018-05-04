@@ -1,24 +1,40 @@
 input.btn {
     border: 0;
     display:block;
-    padding:1em 3em;
+    width: 8em;
+    padding:1em 2em;
     background:#A5F883; //button color Add an product
     color:#003A61;
     margin-bottom:1em;
     cursor:pointer;
 }
 
-.container {
+.home {
   display: grid;
   grid-template-columns: 1fr;
+  text-align: center;
   padding: 1em;
+}
+
+.col {
+  padding: .4em 1.3em;
+}
+
+p{
+  font-size: 1.5em;
 }
 
 .color-light {
   background: #57B3F1; //color below
 }
 
-.container2 {
+.buttons {
+  margin:auto;
+  grid-gap:2em;
   display: grid;
-  grid-template-columns: 50% auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+.rcorners {
+  border-radius: 25px;
 }

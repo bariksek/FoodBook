@@ -1,39 +1,80 @@
+
+.title1 { grid-area: title1; border-radius: 25px 25px 0px 0px; }
+.title2 { grid-area: title2; border-radius: 25px 25px 0px 0px; }
+.content1 { grid-area: content1; border-radius: 0px 0px 25px 25px; }
+.content2 { grid-area: content2; border-radius: 0px 0px 25px 25px; }
+
+
 .container {
-    display: grid;
-    grid-template-columns: 50% auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "title1"
+  "content1"
+  "gap"
+  "title2"
+  "content2";
+}
+.gap {
+  grid-area: gap;
 }
 .col {
-    padding: .4em 1.3em;
+  padding: .4em 1.3em;
 }
+
 .color-dark {
-    background: #2885C4; //Add products and your product list color
+  background: #2885C4; //Add products and your product list color
 }
+
 .color-light {
-    background: #57B3F1; //color below
+  background: #57B3F1; //color below
 }
 
 input.txt {
-    border: 0;
-    padding: 1em;
-    width: 80%;
-    margin-bottom: 2em;
+  border: 0;
+  padding: 1em;
+  width: 80%;
+  display: block;
+  margin:auto;
 }
+
 p.txt {
-  font-size: 1em;
+  font-size: 1.1em;
   margin-top: 0.4em;
+  margin-left: 1em;
 }
+
 input.btn {
-    border: 0;
-    display:block;
-    padding:1em 3em;
-    background:#A5F883; //button color Add an product
-    color:#003A61;
-    margin-bottom:1em;
-    cursor:pointer;
+  border: 0;
+  display: block;
+  margin:auto;
+  padding: 1em 2em;
+  background: #A5F883; //button color Add an product
+  color: #003A61;
+  margin-bottom: 1em;
+  cursor: pointer;
 }
+
 .life-container {
-    background:#3FA0E1; //products color
-    padding:.5em;
-    font-weight:bold;
-    cursor:pointer;
+  background: #3FA0E1; //products color
+  padding: .5em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.rcorners {
+  border-radius: 25px 25px 25px 25px;
+}
+
+@media screen and (min-width: 736px) {
+.title1 { grid-area: title1; border-radius: 25px 0px 0px 0px;}
+.title2 { grid-area: title2; border-radius: 0px 25px 0px 0px;}
+.content1 { grid-area: content1; border-radius: 0px 0px 0px 25px;}
+.content2 { grid-area: content2; border-radius: 0px 0px 25px 0px;}
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "title1 title2" "content1 content2";
+  }
 }
