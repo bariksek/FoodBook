@@ -13,6 +13,8 @@ import { FridgeComponent } from './fridge/fridge.component';
 import { TopNavComponent } from './ui/top-nav/top-nav.component';
 import { FooterNavComponent } from './ui/footer-nav/footer-nav.component';
 import { SignupComponent } from './ui/signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { SignupComponent } from './ui/signup/signup.component';
     FridgeComponent,
     TopNavComponent,
     FooterNavComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
