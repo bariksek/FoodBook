@@ -15,6 +15,8 @@ import { FooterNavComponent } from './ui/footer-nav/footer-nav.component';
 import { SignupComponent } from './ui/signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { PrivatePageComponent } from './private-page/private-page.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { RegisterComponent } from './register/register.component';
     FooterNavComponent,
     SignupComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PrivatePageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,

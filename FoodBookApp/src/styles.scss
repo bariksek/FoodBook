@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 
 body {
-    background:#2E9CE6; //background color
+    background:rgb(46, 156, 230); //background color
     padding: 3em;
     font-family: 'Raleway', 'Arial';
     color:#fff;
@@ -21,4 +21,10 @@ ul li a {
 a {
     color:#fff;
     text-decoration:none;
+}
+.color-light {
+  background: rgb(87, 179, 241); //color below
+}
+.rcorners {
+  border-radius: 25px;
 }

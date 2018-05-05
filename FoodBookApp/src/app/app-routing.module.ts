@@ -4,15 +4,16 @@ import { HomeComponent } from './ui/home/home.component';
 import { SearchComponent } from './ui/search/search.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { PrivatePageComponent } from './private-page/private-page.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'search',
-    component: SearchComponent
-  }
+  { path: '', component: HomeComponent},
+  { path: 'search', component: SearchComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'private', component: PrivatePageComponent },
+  { path: '**', component: NotFoundPageComponent },
 ];
 
 @NgModule({
