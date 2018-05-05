@@ -10,14 +10,16 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" routerLink="">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" routerLink="search">Search</a>
+      <a class="nav-item nav-link desktop-hide" >Log In</a>
+      <a class="nav-item nav-link desktop-hide" >Sign Up</a>
     </div>
   </div>
 
   <form class="form-inline">
-    <input type="text" class="form-control txt" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-    <input type="password" class="form-control txt" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
-    <button class="btn btn-outline-success my-2 my-sm-0 margin" type="submit">Log In</button>
-    <button class="btn btn-outline-success my-2 my-sm-0 margin" type="submit">Sigh Up</button>
+    <input type="text" class="form-control txt mobile-hide" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <input type="password" class="form-control txt mobile-hide" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit">Log In</button>
+    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit">Sigh Up</button>
   </form>
 
 </nav>
