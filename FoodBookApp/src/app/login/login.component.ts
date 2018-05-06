@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   onSubmitLogin() {
     this.authService.loginUserByEmail(this.email, this.password)
       .then((res) => {
-        this.router.navigate(['/private']);
+        this.router.navigate(['/']);
       }).catch((err) => {
         console.log(err);
         this.router.navigate(['/login']);
