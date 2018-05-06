@@ -7,7 +7,6 @@
 
 .container {
   display: grid;
-
   grid-template-columns: 1fr;
   grid-template-areas:
   "title1"
@@ -21,14 +20,6 @@
 }
 .col {
   padding: .4em 1.3em;
-}
-
-.color-dark {
-  background: #2885C4; //Add products and your product list color
-}
-
-.color-light {
-  background: #57B3F1; //color below
 }
 
 input.txt {
@@ -57,7 +48,7 @@ input.btn {
 }
 
 .life-container {
-  background: #3FA0E1; //products color
+  background: rgba(63, 160, 225, 0.7); //products color
   padding: .5em;
   font-weight: bold;
   cursor: pointer;
