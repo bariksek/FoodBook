@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import fontawesome from '@fortawesome/fontawesome';
+import faTrashAlt from '@fortawesome/fontawesome-free-regular/';
 
 @Component({
   selector: 'app-root',

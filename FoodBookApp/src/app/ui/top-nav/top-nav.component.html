@@ -7,25 +7,20 @@
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" routerLink="">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" routerLink="search">Search</a>
-      <a class="nav-item nav-link desktop-hide">Log In</a>
-      <a class="nav-item nav-link desktop-hide">Sign Up</a>
+      <a class="nav-item nav-link active" routerLink=""> <i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="search"><i class="fas fa-search"></i> Search </a>
+      <a class="nav-item nav-link desktop-hide" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </a>
+      <a class="nav-item nav-link desktop-hide" routerLink="register"><i class="fas fa-user-plus"></i> Sign Up</a>
 
     </div>
-    <div>
-      <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit" routerLink="login">Log In</button>
-      <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit" routerLink="register">Sign Up</button>
-    </div>
-  </nav>
   </div>
 
   <div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
-    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit">Log In</button>
-    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit">Sign Up</button>
+    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </button>
+    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit" routerLink="register"><i class="fas fa-user-plus"></i> Sign up </button>
   </div>
 
 </nav>
