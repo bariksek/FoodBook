@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/map';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
 
   constructor(
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    public router: Router
   ) { }
 
   registerUser(email: string, password: string) {
@@ -30,7 +32,8 @@ export class AuthService {
   }
 
   logout() {
-    return this.afAuth.auth.signOut();
+    this.afAuth.auth.signOut();
+    this.router.navigate(['/']);
   }
 }
 
