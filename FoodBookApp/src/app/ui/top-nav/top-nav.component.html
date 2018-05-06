@@ -1,18 +1,17 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary rcorners">
-    <a class="navbar-brand" >
-      <img src="assets/images/logo.png" width="35px" alt="FoodBookLogo"/> FoodBook
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" routerLink="/">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" routerLink="search">Search</a>
-        <a class="nav-item nav-link desktop-hide" routerLink="login">Log In</a>
-        <a class="nav-item nav-link desktop-hide" routerLink="register">Sign Up</a>
-      </div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary rcorners">
+  <a class="navbar-brand" >
+    <img src="assets/images/logo.png" width="35px" alt="FoodBookLogo"/> FoodBook
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="search">Search</a>
+      <a class="nav-item nav-link desktop-hide">Log In</a>
+      <a class="nav-item nav-link desktop-hide">Sign Up</a>
+
     </div>
     <div>
       <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit" routerLink="login">Log In</button>
@@ -20,3 +19,15 @@
     </div>
   </nav>
   </div>
+
+  <div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit">Log In</button>
+    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" type="submit">Sign Up</button>
+  </div>
+
+</nav>
+</div>
+

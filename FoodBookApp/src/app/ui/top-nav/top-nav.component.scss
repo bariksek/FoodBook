@@ -4,30 +4,39 @@
   padding: 1em;
 }
 
- .rcorners {
-    border-radius: 25px;
+.navbar-dark {
+  background: rgba(40, 133, 196, 0.5) !important;
+}
+
+.rcorners {
+  border-radius: 25px;
 }
 
 input.txt {
   width: 8em;
-  margin-right:10px;
-}
-button.margin{
-  margin-right:5px;
+  margin-right: 10px;
 }
 
-@media screen and (min-width: 721px){
-  .desktop-hide{ display: none; }
+button.margin {
+  margin-right: 5px;
 }
-@media screen and (min-width: 0px) and (max-width: 720px) {
-  .mobile-hide{ display: none; }
+
+@media screen and (min-width: 993px) {
+  .desktop-hide {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 992px) {
+  .mobile-hide {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 736px) {
-
   .container {
     max-width: 100%;
     padding-right: 0px;
     padding-left: 0px;
   }
-  }
+}
