@@ -1,7 +1,20 @@
-<div class="container">
-  <div class="color-light rcorners">
-    <p>register works</p>
-
-
+<div class="row">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="color-light home rcorners">
+      <div class="card-body">
+        <h1 class="text-center">Sign up</h1>
+        <form (submit)="onSubmitAddUser()">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
+          </div>
+          <input type="submit" value="Sign up" class="btn btn-primary btn-block btn-lg">
+        </form>
+      </div>
+    </div>
   </div>
 </div>
