@@ -25,6 +25,8 @@
     "@fortawesome/fontawesome-free-brands": "^5.0.12",
     "@fortawesome/fontawesome-free-regular": "^5.0.12",
     "@fortawesome/fontawesome-free-solid": "^5.0.12",
+    "angularfire2": "^5.0.0-rc.7",
+    "firebase": "4.12.1",
     "bootstrap": "^4.0.0",
     "bootswatch": "^4.1.1",
     "core-js": "^2.4.1",
