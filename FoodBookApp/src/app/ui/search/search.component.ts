@@ -2,6 +2,16 @@ import { Component, OnInit } from '@angular/core';
 
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations'; // important, animation
 
+import { BrowserModule } from '@angular/platform-browser';
+
+import { Http } from '@angular/http';
+
+import { NgModule, ErrorHandler } from '@angular/core';
+
+import { HttpModule } from '@angular/http';
+
+import { HttpClientModule } from '@angular/common/http';
+import { app } from 'firebase/app';
 
 @Component({  // don't touch this section. It is responsible for animation of the list.
   selector: 'app-search',
@@ -42,7 +52,9 @@ export class SearchComponent implements OnInit {
   products = ['Bread', 'Potatoes', 'Onion'];
   productsToText = '';
   apiKey = 'a907d86f069da4a61ca8b890f77a476e';
-  constructor() { }
+  apiRoot = 'http://food2fork.com/api/search?key=' + this.apiKey + '&q=';
+
+  constructor(private http: Http) { }
 
   ngOnInit() {
     this.itemCount = this.products.length; // on init count products
@@ -62,11 +74,19 @@ export class SearchComponent implements OnInit {
     this.itemCount = this.products.length;
   }
 
+  getFromApi(element: string) {
+    const url = `${this.apiRoot}` + element;
+    return this.http.get(url).subscribe(res => console.log(res.text()));
+}
+
   searchRecipes() {
     this.productsToText = '';
     this.products.forEach(element => {
-      this.productsToText += element + ', ';
+      this.productsToText += element + ',';
     });
     console.log(this.productsToText);
+    console.log(this.getFromApi(this.productsToText));
+
+
   }
 }
