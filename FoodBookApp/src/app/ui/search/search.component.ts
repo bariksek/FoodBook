@@ -41,6 +41,7 @@ export class SearchComponent implements OnInit {
   productText = '';
   products = ['Bread', 'Potatoes', 'Onion'];
   productsToText = '';
+  apiKey = 'a907d86f069da4a61ca8b890f77a476e';
   constructor() { }
 
   ngOnInit() {
