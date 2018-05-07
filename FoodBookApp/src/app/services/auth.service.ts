@@ -26,7 +26,9 @@ export class AuthService {
           err => reject(err));
     });
   }
-
+  loginUserByGoogle() {
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
   getAuth() {
     return this.afAuth.authState.map( auth => auth);
   }

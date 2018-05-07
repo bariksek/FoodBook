@@ -33,5 +33,11 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/login']);
       });
   }
+  onClickGoogleLogin() {
+    this.authService.loginUserByGoogle()
+    .then((res) => {
+      this.router.navigate(['/']);
+    }).catch(err => console.log(err.message));
 
+  }
 }

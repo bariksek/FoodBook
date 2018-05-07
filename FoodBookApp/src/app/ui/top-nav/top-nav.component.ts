@@ -9,6 +9,7 @@ export class TopNavComponent implements OnInit {
   public isLogin: boolean;
   public username: string;
   public userEmail: string;
+  public usernamePhoto: string;
   constructor(
     public authService: AuthService
   ) { }
@@ -19,6 +20,7 @@ export class TopNavComponent implements OnInit {
         this.isLogin = true;
         this.username = auth.displayName;
         this.userEmail = auth.email;
+        this.usernamePhoto = auth.photoURL;
       } else {
         this.isLogin = false;
       }
