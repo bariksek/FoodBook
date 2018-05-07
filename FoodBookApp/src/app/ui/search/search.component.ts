@@ -40,6 +40,7 @@ export class SearchComponent implements OnInit {
   buttonText = 'Add an product';
   productText = '';
   products = ['Bread', 'Potatoes', 'Onion'];
+  productsToText = '';
   constructor() { }
 
   ngOnInit() {
@@ -58,5 +59,13 @@ export class SearchComponent implements OnInit {
   removeItem(i) {
     this.products.splice(i, 1);
     this.itemCount = this.products.length;
+  }
+
+  searchRecipes() {
+    this.productsToText = '';
+    this.products.forEach(element => {
+      this.productsToText += element + ', ';
+    });
+    console.log(this.productsToText);
   }
 }

@@ -15,11 +15,16 @@
     <form>
       <input type="text" class="txt" name="item" align="center" placeholder="Type any product .." [(ngModel)]="productText">
       <br>
-      <input type="submit" class="btn" [value]="buttonText" (click)="addItem()">
     </form>
+    <div class="column2">
+      <div><input type="submit" class="btn" [value]="buttonText" (click)="addItem()"></div>
+      <div><input type="submit" class="btn" value="Search recipes" (click)="searchRecipes()"></div>
+    </div>
   </div>
 
   <div class="color-light col content2">
     <p class="life-container" *ngFor="let product of products; let i = index" (click)="removeItem(i)"> {{ product }}</p>
   </div>
+
+  <div>
 </div>
