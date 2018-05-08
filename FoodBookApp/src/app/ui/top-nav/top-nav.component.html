@@ -22,9 +22,21 @@
       </button>
     <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="!isLogin" type="submit" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </button>
     <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="!isLogin" type="submit" routerLink="register"><i class="fas fa-user-plus"></i> Sign up </button>
-    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()">Logout</button>
-    <img src="{{usernamePhoto}}" *ngIf="isLogin" class="rounded-circle">
-    <span class="badge pill badge-secondary" *ngIf="isLogin">{{userEmail}}</span>
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()">Logout</button> -->
+    
+    <div class="dropdown mobile-hide">
+      <!-- <a class="nav-item nav-link" *ngIf="isLogin" routerLink="search"><i class="fa fa-user"></i> Profile </a> -->
+      <img src="{{usernamePhoto}}" *ngIf="isLogin" class="rounded-circle mobile-hide">
+     <span class="badge pill badge-secondary nav-item nav-link mobile-hide" *ngIf="isLogin">{{userEmail}}</span>
+
+      <div class="dropdown-content mobile-hide">
+        <a href="#" routerLink="favourites">Favourites</a>
+        <a href="#" class="nav-item nav-link desktop-hide my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()"><i class="fa fa-sign-out"></i>Logout</a>
+      </div>
+    </div>
+    <!-- <img src="{{usernamePhoto}}" *ngIf="isLogin" class="rounded-circle">
+    <span class="badge pill badge-secondary" *ngIf="isLogin">{{userEmail}}</span> -->
+    
 
   </div>
 

@@ -22,6 +22,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {FlashMessagesService} from 'angular2-flash-messages';
     LoginComponent,
     RegisterComponent,
     PrivatePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,
