@@ -30,7 +30,7 @@
      <span class="badge pill badge-secondary nav-item nav-link mobile-hide" *ngIf="isLogin">{{userEmail}}</span>
 
       <div class="dropdown-content mobile-hide">
-        <a href="#">Favourites</a>
+        <a href="#" routerLink="favourites">Favourites</a>
         <a href="#" class="nav-item nav-link desktop-hide my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()"><i class="fa fa-sign-out"></i>Logout</a>
       </div>
     </div>
