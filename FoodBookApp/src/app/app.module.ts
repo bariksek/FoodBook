@@ -10,8 +10,6 @@ import { SearchComponent } from './ui/search/search.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { FridgeComponent } from './fridge/fridge.component';
 import { TopNavComponent } from './ui/top-nav/top-nav.component';
-import { FooterNavComponent } from './ui/footer-nav/footer-nav.component';
-import { SignupComponent } from './ui/signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PrivatePageComponent } from './private-page/private-page.component';
@@ -31,8 +29,6 @@ import {FlashMessagesService} from 'angular2-flash-messages';
     RecipeComponent,
     FridgeComponent,
     TopNavComponent,
-    FooterNavComponent,
-    SignupComponent,
     LoginComponent,
     RegisterComponent,
     PrivatePageComponent,
