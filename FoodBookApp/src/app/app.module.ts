@@ -22,6 +22,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import { HttpModule } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FavouritesComponent } from './favourites/favourites.component';
 
 @NgModule({
@@ -46,8 +48,10 @@ import { FavouritesComponent } from './favourites/favourites.component';
     FormsModule,
     BrowserAnimationsModule, // added for animation purposes
     AngularFireAuthModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FlashMessagesModule
+
   ],
   providers: [AuthService, FlashMessagesService],
   bootstrap: [AppComponent]

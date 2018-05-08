@@ -13,3 +13,64 @@
   background: #55acee;
   color: #fff;
 }
+@media screen and (max-width: 736px) {
+  .container {
+    max-width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+/*Mid resolution tablet*/
+@media screen and (min-width: 401px) and (max-width: 992px) {
+  .column3 {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 1em;
+    grid-gap: 2em;
+    padding-bottom: 5em;
+    padding-top: 5em;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .gap {
+    padding: 2em;
+  }
+}
+
+/*Low resolution mobile phone*/
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  .column3 {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1em;
+    grid-gap: 2em;
+    padding-bottom: 3em;
+    padding-top: 3em;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .gap {
+    padding: 1em;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  p {
+    font-size: 1.5em;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  p {
+    font-size: 1.2em;
+  }
+}
+
+@media all and (max-width: 500px) {
+  p {
+    font-size: 0.8em;
+  }
+}
+.rcorners {
+  border-radius: 25px;
+}

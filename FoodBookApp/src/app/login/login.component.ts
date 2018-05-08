@@ -38,6 +38,17 @@ export class LoginComponent implements OnInit {
     .then((res) => {
       this.router.navigate(['/']);
     }).catch(err => console.log(err.message));
-
+  }
+  onClickFacebookLogin() {
+    this.authService.loginUserByFacebook()
+    .then((res) => {
+      this.router.navigate(['/']);
+    }).catch(err => console.log(err.message));
+  }
+  onClickTwitterLogin() {
+    this.authService.loginUserByTwitter()
+    .then((res) => {
+      this.router.navigate(['/']);
+    }).catch(err => console.log(err.message));
   }
 }
