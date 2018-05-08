@@ -9,7 +9,7 @@
 }
 
 .rcorners {
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 input.txt {
@@ -65,11 +65,17 @@ button.margin {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd}
+.dropdown-content a:hover {background-color: #ddd }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 .badge {
   background-color: rgba(0, 0, 0, 0);
+}
+.userphoto {
+  margin-left: -1%;
+}
+.logout {
+  cursor: pointer;
 }
