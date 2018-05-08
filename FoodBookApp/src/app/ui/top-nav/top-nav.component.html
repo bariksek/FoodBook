@@ -9,11 +9,9 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" routerLink=""> <i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" routerLink="search"><i class="fas fa-search"></i> Search </a>
-      <a class="nav-item nav-link" *ngIf="isLogin" routerLink="search"><i class="fa fa-user"></i> Profile </a>
       <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </a>
       <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="register"><i class="fas fa-user-plus"></i> Sign Up </a>
       <a class="nav-item nav-link desktop-hide" *ngIf="isLogin" (click)="onClickLogout()">Logout</a>
-
     </div>
   </div>
 
@@ -23,9 +21,21 @@
       </button>
     <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="!isLogin" type="submit" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </button>
     <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="!isLogin" type="submit" routerLink="register"><i class="fas fa-user-plus"></i> Sign up </button>
-    <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()">Logout</button>
-    <img src="{{usernamePhoto}}" *ngIf="isLogin" class="rounded-circle">
-    <span class="badge pill badge-secondary" *ngIf="isLogin">{{userEmail}}</span>
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()">Logout</button> -->
+    
+    <div class="dropdown">
+      <!-- <a class="nav-item nav-link" *ngIf="isLogin" routerLink="search"><i class="fa fa-user"></i> Profile </a> -->
+      <img src="{{usernamePhoto}}" *ngIf="isLogin" class="rounded-circle">
+     <span class="badge pill badge-secondary nav-item nav-link" *ngIf="isLogin">{{userEmail}}</span>
+
+      <div class="dropdown-content">
+        <a href="#">Favourites</a>
+        <a class="nav-item nav-link desktop-hide my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()">Logout</a>
+      </div>
+    </div>
+    <!-- <img src="{{usernamePhoto}}" *ngIf="isLogin" class="rounded-circle">
+    <span class="badge pill badge-secondary" *ngIf="isLogin">{{userEmail}}</span> -->
+    
 
   </div>
 
