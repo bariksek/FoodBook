@@ -24,8 +24,8 @@
       <p>Time to fill up your fridge.</p>
     </div>
 
-    <div class="" *ngIf="isProduct" [@products]="products.length">
-      <p class="life-container" *ngFor="let product of products; let i = index" (click)="removeItem(i)"> {{ product }}</p>
+    <div class="" *ngIf="isProduct" [@products]="productTab.length">
+      <p class="life-container" *ngFor="let product of products; let i = index" > {{ product.name }}</p> <!-- (click)="removeItem(i)" -->
     </div>
   </div>
 
