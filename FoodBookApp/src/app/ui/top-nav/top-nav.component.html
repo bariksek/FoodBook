@@ -5,6 +5,7 @@
     <img src="assets/images/logo.png" width="35px" alt="FoodBookLogo"/> FoodBook
   </a>
 
+  <!-- Menu mobilne  -->
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" routerLink=""> <i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
@@ -12,10 +13,13 @@
       <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </a>
       <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="register"><i class="fas fa-user-plus"></i> Sign Up </a>
       <a class="nav-item nav-link desktop-hide" *ngIf="isLogin" (click)="onClickLogout()">Logout</a>
+      <a class="nav-item nav-link desktop-hide"><img src="{{userPhoto}}" *ngIf="isLogin" class="rounded-circle"><span class="badge pill badge-secondary desktop-hide" *ngIf="isLogin">{{username}}</span>
+      </a>
 
     </div>
   </div>
 
+  <!-- Menu desktopowe  -->
   <div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -23,8 +27,8 @@
     <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="!isLogin" type="submit" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </button>
     <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="!isLogin" type="submit" routerLink="register"><i class="fas fa-user-plus"></i> Sign up </button>
     <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()">Logout</button>
-    <img src="{{usernamePhoto}}" *ngIf="isLogin" class="rounded-circle">
-    <span class="badge pill badge-secondary" *ngIf="isLogin">{{userEmail}}</span>
+    <a class="my-2 my-sm-0 margin mobile-hide"><img src="{{userPhoto}}" *ngIf="isLogin" class="rounded-circle"></a>
+    <span class="badge pill badge-secondary mobile-hide" *ngIf="isLogin">{{username}}</span>
 
   </div>
 
