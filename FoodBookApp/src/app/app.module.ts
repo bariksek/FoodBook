@@ -23,7 +23,7 @@ import { environment } from '../environments/environment';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,7 @@ import { HttpClient } from '@angular/common/http';
     FormsModule,
     BrowserAnimationsModule, // added for animation purposes
     AngularFireAuthModule,
-    HttpModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FlashMessagesModule
 

@@ -10,8 +10,14 @@ import { NgModule, ErrorHandler } from '@angular/core';
 
 import { HttpModule } from '@angular/http';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders, HttpParams } from '@angular/common/http';
+
 import { app } from 'firebase/app';
+
+import { HttpClient } from '@angular/common/http';
+
+import { Post } from './PostInterface';
+import { Observable } from 'rxjs/Observable';
 
 @Component({  // don't touch this section. It is responsible for animation of the list.
   selector: 'app-search',
@@ -52,9 +58,10 @@ export class SearchComponent implements OnInit {
   products = ['Bread', 'Potatoes', 'Onion'];
   productsToText = '';
   apiKey = 'a907d86f069da4a61ca8b890f77a476e';
-  apiRoot = 'http://food2fork.com/api/search?key=' + this.apiKey + '&q=';
+  apiWebsite = 'http://food2fork.com/';
+  apiRoot = '/api/search?key=' + this.apiKey + '&q=';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.itemCount = this.products.length; // on init count products
@@ -74,9 +81,14 @@ export class SearchComponent implements OnInit {
     this.itemCount = this.products.length;
   }
 
-  getFromApi(element: string) {
-    const url = `${this.apiRoot}` + element;
-    return this.http.get(url).subscribe(res => console.log(res.text()));
+  getObservableFromApi(url: string):  Observable<Array<Post>> {
+    return this.http.get<Array<Post>>(url);
+}
+
+  getFromApi(url: string) {
+    this.getObservableFromApi(url).subscribe(posts => {
+      console.log(posts);
+    });
 }
 
   searchRecipes() {
@@ -84,8 +96,9 @@ export class SearchComponent implements OnInit {
     this.products.forEach(element => {
       this.productsToText += element + ',';
     });
+    const url = `${this.apiRoot}` + this.productsToText;
     console.log(this.productsToText);
-    console.log(this.getFromApi(this.productsToText));
+    this.getFromApi(url);
 
 
   }
