@@ -1,14 +1,16 @@
-<div class="container" [@products]="products.length">
+
+<div class="container">
+
   <div class="color-dark title1">
     <p class="txt">Add products to your fridge</p>
   </div>
- 
+
   <div class="color-dark title2">
     <p class="txt">Your products list ({{ itemCount }})</p>
   </div>
- 
+
   <div class="gap"><p></p></div>
- 
+
   <div class="color-light col content1">
     <p style="text-align: center">Use this form below to add a new products to your fridge. We will find matching recipes for you. </p>
     <form>
@@ -20,16 +22,25 @@
       <div><input type="submit" class="btn" value="Search recipes" (click)="searchRecipes()"></div>
     </div>
   </div>
- 
+
   <div class="color-light col content2">
-    <p class="life-container" *ngFor="let product of products; let i = index" (click)="removeItem(i)"> {{ product }}</p>
+    <div class="fill" *ngIf="!isProduct">
+      <p>Time to fill up your fridge.</p>
+    </div>
+
+    <div class="" *ngIf="isProduct" [@products]="productTab.length">
+      <p class="life-container" *ngFor="let product of productTab; let i = index" (click)="removeItem(i)"> {{ product }}</p> <!-- (click)="removeItem(i)" -->
+    </div>
   </div>
+
 </div>
- 
+
+<div class="gap2"><p></p></div>
+
 <div class="container column1">
- 
   <div class="color-light rcorners">
     <app-recipe></app-recipe>
   </div>
- 
+
 </div>
+

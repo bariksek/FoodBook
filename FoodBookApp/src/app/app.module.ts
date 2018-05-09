@@ -10,8 +10,6 @@ import { SearchComponent } from './ui/search/search.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { FridgeComponent } from './fridge/fridge.component';
 import { TopNavComponent } from './ui/top-nav/top-nav.component';
-import { FooterNavComponent } from './ui/footer-nav/footer-nav.component';
-import { SignupComponent } from './ui/signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PrivatePageComponent } from './private-page/private-page.component';
@@ -22,9 +20,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { CookieModule } from 'ngx-cookie';
 import { HttpModule } from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FavouritesComponent } from './favourites/favourites.component';
+
 
 @NgModule({
   declarations: [
@@ -34,8 +35,6 @@ import { FavouritesComponent } from './favourites/favourites.component';
     RecipeComponent,
     FridgeComponent,
     TopNavComponent,
-    FooterNavComponent,
-    SignupComponent,
     LoginComponent,
     RegisterComponent,
     PrivatePageComponent,
@@ -44,10 +43,12 @@ import { FavouritesComponent } from './favourites/favourites.component';
   ],
   imports: [
     BrowserModule,
+    CookieModule.forRoot(),
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule, // added for animation purposes
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FlashMessagesModule
