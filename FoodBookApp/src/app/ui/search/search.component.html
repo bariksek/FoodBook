@@ -1,4 +1,5 @@
-<div class="container" [@products]="products.length">
+<div class="container ">
+
   <div class="color-dark title1 box-shadow">
     <p class="txt">Add products to your fridge</p>
   </div>
@@ -23,12 +24,23 @@
 
   <div class="color-light col content2 box-shadow">
     <p class="life-container" *ngFor="let product of products; let i = index" (click)="removeItem(i)"> {{ product }}</p>
+  <div class="color-light col content2">
+    <div class="fill" *ngIf="!isProduct">
+      <p>Time to fill up your fridge.</p>
+    </div>
+
+    <div class="" *ngIf="isProduct" [@products]="productTab.length">
+      <p class="life-container" *ngFor="let product of productTab; let i = index" (click)="removeItem(i)"> {{ product }}</p> <!-- (click)="removeItem(i)" -->
+    </div>
   </div>
+
 </div>
 
 <div class="container column1">
 
   <div class="color-light rcorners box-shadow">
+<div class="gap2"><p></p></div>
+
     <app-recipe></app-recipe>
   </div>
 
