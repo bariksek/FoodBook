@@ -4,7 +4,7 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Product } from './product';
-import { CookieService } from 'angular2-cookie/core';
+import { CookieService } from 'ngx-cookie';
 
 @Component({  // don't touch this section. It is responsible for animation of the list.
   selector: 'app-search',
@@ -51,11 +51,6 @@ export class SearchComponent implements OnInit {
     this.itemCount = this.productTab.length; // on init count products
     this.productCheck();
   }
-
-/*   // tslint:disable-next-line:use-life-cycle-interface
-  ngOnChanges() {
-    this.ngOnInit();
-  } */
 
   productCheck() {
     if (this.itemCount === 0) {

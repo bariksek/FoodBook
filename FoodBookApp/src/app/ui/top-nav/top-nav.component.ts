@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { CookieService } from 'ngx-cookie';
+
 @Component({
   selector: 'app-top-nav',
   templateUrl: './top-nav.component.html',
@@ -11,6 +13,7 @@ export class TopNavComponent implements OnInit {
   public userEmail: string;
   public usernamePhoto: string;
   constructor(
+    private _cookieService: CookieService,
     public authService: AuthService
   ) { }
 
@@ -29,6 +32,7 @@ export class TopNavComponent implements OnInit {
 
   onClickLogout() {
     this.authService.logout();
+    this._cookieService.removeAll();
   }
 
 }
