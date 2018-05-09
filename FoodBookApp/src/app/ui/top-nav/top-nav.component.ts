@@ -11,7 +11,7 @@ export class TopNavComponent implements OnInit {
   public isLogin: boolean;
   public username: string;
   public userEmail: string;
-  public usernamePhoto: string;
+  public userPhoto: string;
   constructor(
     private _cookieService: CookieService,
     public authService: AuthService
@@ -23,7 +23,11 @@ export class TopNavComponent implements OnInit {
         this.isLogin = true;
         this.username = auth.displayName;
         this.userEmail = auth.email;
-        this.usernamePhoto = auth.photoURL;
+        this.userPhoto = auth.photoURL;
+        if (this.userPhoto === null) {
+          this.userPhoto = 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg';
+        }
+        console.log(this.userPhoto);
       } else {
         this.isLogin = false;
       }

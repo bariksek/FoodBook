@@ -22,6 +22,10 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CookieModule } from 'ngx-cookie';
+import { HttpModule } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FavouritesComponent } from './favourites/favourites.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import { CookieModule } from 'ngx-cookie';
     LoginComponent,
     RegisterComponent,
     PrivatePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +49,10 @@ import { CookieModule } from 'ngx-cookie';
     BrowserAnimationsModule, // added for animation purposes
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FlashMessagesModule
+
   ],
   providers: [AuthService, FlashMessagesService],
   bootstrap: [AppComponent]

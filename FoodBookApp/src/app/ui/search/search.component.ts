@@ -6,6 +6,24 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Product } from './product';
 import { CookieService } from 'ngx-cookie';
 
+import { BrowserModule } from '@angular/platform-browser';
+
+import { Http } from '@angular/http';
+
+import { NgModule, ErrorHandler } from '@angular/core';
+
+import { HttpModule } from '@angular/http';
+
+import { HttpClientModule, HttpHeaders, HttpParams } from '@angular/common/http';
+
+import { app } from 'firebase/app';
+
+import { HttpClient } from '@angular/common/http';
+
+import { Post } from './PostInterface';
+import { Observable } from 'rxjs/Observable';
+
+
 @Component({  // don't touch this section. It is responsible for animation of the list.
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -44,7 +62,14 @@ export class SearchComponent implements OnInit {
   productText = '';
   productTab = [];
   cookieTab;
-  constructor(private _cookieService: CookieService) { }
+  products = ['Bread', 'Potatoes', 'Onion'];
+  productsToText = '';
+  apiKey = 'a907d86f069da4a61ca8b890f77a476e';
+  apiWebsite = 'http://food2fork.com/';
+  apiRoot = '/api/search?key=' + this.apiKey + '&q=';
+
+  constructor(private http: HttpClient, private _cookieService: CookieService) { }
+
 
   ngOnInit() {
     this.productsFromCookie();
@@ -90,4 +115,25 @@ export class SearchComponent implements OnInit {
     console.log(this.productTab);
   }
 
+  getObservableFromApi(url: string):  Observable<Array<Post>> {
+    return this.http.get<Array<Post>>(url);
+}
+
+  getFromApi(url: string) {
+    this.getObservableFromApi(url).subscribe(posts => {
+      console.log(posts);
+    });
+}
+
+  searchRecipes() {
+    this.productsToText = '';
+    this.products.forEach(element => {
+      this.productsToText += element + ',';
+    });
+    const url = `${this.apiRoot}` + this.productsToText;
+    console.log(this.productsToText);
+    this.getFromApi(url);
+
+
+  }
 }

@@ -19,6 +19,9 @@ export class AuthService {
           err => reject(err));
     });
   }
+  loginUserByTwitter() {
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+  }
   loginUserByEmail(email: string, password: string) {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.signInWithEmailAndPassword(email, password)
@@ -28,6 +31,9 @@ export class AuthService {
   }
   loginUserByGoogle() {
     return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+  loginUserByFacebook() {
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
   }
   getAuth() {
     return this.afAuth.authState.map( auth => auth);
