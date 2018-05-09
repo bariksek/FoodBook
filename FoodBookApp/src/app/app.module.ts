@@ -21,6 +21,7 @@ import { environment } from '../environments/environment';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FlashMessagesModule
   ],
-  providers: [AuthService, FlashMessagesService],
+  providers: [AuthService, FlashMessagesService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

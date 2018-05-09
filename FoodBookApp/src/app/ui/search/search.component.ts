@@ -4,6 +4,7 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Product } from './product';
+import { CookieService } from 'angular2-cookie/core';
 
 @Component({  // don't touch this section. It is responsible for animation of the list.
   selector: 'app-search',
@@ -36,62 +37,62 @@ import { Product } from './product';
 
 export class SearchComponent implements OnInit {
 
-  // variables
   isProduct;
   itemCount;
+  i;
   buttonText = 'Add an product';
   productText = '';
-  productTab = ['test'];
-  products: any[];
-
-  constructor(public db: AngularFireDatabase) {
-    db.list('/products')
-    .valueChanges()
-    .subscribe(products => {
-      this.products = products;
-      console.log(this.products);
-    });
-  }
-
-  addItem() {
-    this.db.list('/products').push({ name: this.productText });
-    this.productText = '';
-  }
-
-  /* deleteItem() {
-    this.db.list('/products').remove({ });
-    this.productText = '';
-  } */
+  productTab = [];
+  cookieTab;
+  constructor(private _cookieService: CookieService) { }
 
   ngOnInit() {
-
+    this.productsFromCookie();
     this.itemCount = this.productTab.length; // on init count products
     this.productCheck();
   }
 
+/*   // tslint:disable-next-line:use-life-cycle-interface
+  ngOnChanges() {
+    this.ngOnInit();
+  } */
+
   productCheck() {
     if (this.itemCount === 0) {
       this.isProduct = false;
+      this._cookieService.removeAll();
     } else { this.isProduct = true; }
   }
-}
 
+  productsFromCookie() {
+    this.cookieTab = this._cookieService.getAll();
+    console.log(this._cookieService.getAll());
+    for (this.i = 0; ; this.i++) {
+      if (this.cookieTab[this.i] === undefined) { console.log('Cookie wczytane'); break; }
+      // tslint:disable-next-line:one-line
+      else { this.productTab[this.i] = this.cookieTab[this.i]; }
+    }
+    console.log(this.productTab);
+  }
 
-
-  /* addItem() {
+  addItem() {
     if (this.productText === '') { } else { // if chosen product is empty do nothing
       this.productTab.push(this.productText);  // else add to the array
+      this._cookieService.put(this.itemCount, this.productText);
+      console.log('adding "' + this.productText + '" to cookies.');
       this.productText = ''; // reset productText field
       this.itemCount = this.productTab.length; // item count++
       this.productCheck();
-    } */
+    }
+  }
 
-
-
- /*  removeItem(i) {
+  removeItem(i) {
+    console.log('Cookie "' + this.productTab[i] + '" usuniete');
     this.productTab.splice(i, 1);
+    this._cookieService.remove(i);
     this.itemCount = this.productTab.length;
     this.productCheck();
-  } */
+    console.log(this.productTab);
+  }
 
-
+}

@@ -25,7 +25,7 @@
     </div>
 
     <div class="" *ngIf="isProduct" [@products]="productTab.length">
-      <p class="life-container" *ngFor="let product of products; let i = index" > {{ product.name }}</p> <!-- (click)="removeItem(i)" -->
+      <p class="life-container" *ngFor="let product of productTab; let i = index" (click)="removeItem(i)"> {{ product }}</p> <!-- (click)="removeItem(i)" -->
     </div>
   </div>
 
