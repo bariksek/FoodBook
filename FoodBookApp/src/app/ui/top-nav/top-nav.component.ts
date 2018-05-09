@@ -27,6 +27,9 @@ export class TopNavComponent implements OnInit {
         if (this.userPhoto === null) {
           this.userPhoto = 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg';
         }
+        if (this.username === null) {
+          this.username = this.userEmail;
+        }
         console.log(this.userPhoto);
       } else {
         this.isLogin = false;

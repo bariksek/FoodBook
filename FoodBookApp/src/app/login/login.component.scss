@@ -13,64 +13,63 @@
   background: #55acee;
   color: #fff;
 }
-@media screen and (max-width: 736px) {
-  .container {
-    max-width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
+.modal-dialog {
+  font-family: 'Robotico', sans-serif;
 }
-/*Mid resolution tablet*/
-@media screen and (min-width: 401px) and (max-width: 992px) {
-  .column3 {
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 1em;
-    grid-gap: 2em;
-    padding-bottom: 5em;
-    padding-top: 5em;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  .gap {
-    padding: 2em;
-  }
+.main-section {
+  margin: 0 auto;
+  margin-top: 130px;
+  padding: 0;
 }
-
-/*Low resolution mobile phone*/
-@media screen and (min-width: 0px) and (max-width: 400px) {
-  .column3 {
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 1em;
-    grid-gap: 2em;
-    padding-bottom: 3em;
-    padding-top: 3em;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  .gap {
-    padding: 1em;
-  }
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-@media all and (max-width: 1200px) {
-  p {
-    font-size: 1.5em;
-  }
+.modal-content{
+  padding: 0 18px;
 }
-
-@media all and (max-width: 1000px) {
-  p {
-    font-size: 1.2em;
-  }
+.user-img {
+  margin-top: -50px;
+  margin-bottom: 35px;
 }
-
-@media all and (max-width: 500px) {
-  p {
-    font-size: 0.8em;
-  }
+.user-img img{
+  height: 100px;
+  width: 100px;
+}
+.form-group {
+  margin-bottom: 25px;
+  width: 100%;
+}
+.form-group input {
+  height: 40px;
+  border-radius: 5px;
+  border: 0;
+  font-size: 14px;
+  padding-left: 54px;
+}
+.form-group::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0e0";
+  position: absolute;
+  color: #f50a16;
+  font-size: 22px;
+  padding-top: 4px;
+  left: 20px;
+}
+.form-group:last-of-type::before {
+  content: "\f084";
+  font-weight: 900;
+}
+.login {
+  background-color: #f50a16;
+  color: white;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #0f66c9!important;
+  border-bottom: 4px solid #0f66c9!important;
 }
 .rcorners {
-  border-radius: 25px;
+  border-radius: 10px;
 }
+

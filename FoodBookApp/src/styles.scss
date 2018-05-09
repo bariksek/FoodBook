@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 @import url('https://use.fontawesome.com/releases/v5.0.12/css/all.css');
+
 body {
 
   min-width: 340px !important;
@@ -18,14 +19,16 @@ body {
 }
 
 .color-dark {
-  background: rgba(40, 133, 196, 0.5);
+  background: #2885c480;
 }
 
 .color-light {
   background: rgba(87, 179, 241, 0.5);
 
 }
-
+.box-shadow{
+  box-shadow: 0px 0px 3px #0c0303;
+}
 ul {
   list-style-type: none;
   margin: 0 0 2em 0;

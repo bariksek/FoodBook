@@ -1,6 +1,6 @@
 <div class="container">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary rcorners">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary rcorners box-shadow">
   <a class="navbar-brand" >
     <img src="assets/images/logo.png" width="35px" alt="FoodBookLogo"/> FoodBook
   </a>
@@ -13,7 +13,7 @@
       <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </a>
       <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="register"><i class="fas fa-user-plus"></i> Sign Up </a>
       <a class="nav-item nav-link desktop-hide my-2 my-sm-0 margin desktop-hide logout" *ngIf="isLogin" (click)="onClickLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
-      <a class="nav-item nav-link desktop-hide" routerLink="favourites"><i class="fas fa-heart"></i> Favourites</a>
+      <a class="nav-item nav-link desktop-hide" *ngIf="isLogin"  routerLink="favourites"><i class="fas fa-heart"></i> Favourites</a>
       <div class="dropdown desktop-hide">
        <a class="my-2 my-sm-0 margin desktop-hide"><img src="{{userPhoto}}" *ngIf="isLogin" class="rounded-circle desktop-hide userphoto"></a>
        <span class="badge pill badge-secondary nav-item nav-link desktop-hide" *ngIf="isLogin">{{username}}</span>
@@ -33,7 +33,7 @@
      <span class="badge pill badge-secondary nav-item nav-link mobile-hide" *ngIf="isLogin">{{username}}</span>
 
       <div class="dropdown-content mobile-hide rcorners">
-        <a href="#" routerLink="favourites"><i class="fas fa-heart"></i> Favourites</a>
+        <a href="#" *ngIf="isLogin" routerLink="favourites"><i class="fas fa-heart"></i> Favourites</a>
         <a href="#" class="nav-item nav-link desktop-hide my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
       </div>
     </div>
