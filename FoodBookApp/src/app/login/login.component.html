@@ -1,30 +1,30 @@
-<div class="container">
-  <div class="color-light home rcorners col-md-6 mx-auto mt-5">
-    <div class="card-body">
-      <h1 class="text-center">Log in</h1>
-      <form (submit)="onSubmitLogin()">
+<div class="modal-dialog text-center">
+  <div class="col-sm-8 main-section">
+    <div class="modal-content color-light home rcorners">
+      <div class="col-12 center user-img">
+          <img src="../../assets/images/fork.png">
+      </div>
+      <form class="col-12" (submit)="onSubmitLogin()">
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
+          <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control" placeholder="Enter your email">
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
+          <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Enter your password">
         </div>
-        <input type="submit" value="LOGIN" class="btn btn-primary btn-block btn-lg">
+            <button type="submit" class="btn login"><i class="fas fa-sign-in-alt"></i> Sign in</button>
       </form>
+      <div class="col-12 card-body">
+          <button class="btn btn-facebook" (click)="onClickFacebookLogin()">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button class="btn btn-google" (click)="onClickGoogleLogin()">
+            <i class="fab fa-google-plus-g"></i>
+          </button>
+          <button class="btn btn-twitter" (click)="onClickTwitterLogin()">
+            <i class="fab fa-twitter"></i>
+          </button>
+        </div>
     </div>
-    <div class="card-body">
-      <button class="btn btn-lg btn-facebook" (click)="onClickFacebookLogin()">
-        <i class="fab fa-facebook-f"></i>
-      </button>
-      <button class="btn btn-lg btn-google" (click)="onClickGoogleLogin()">
-        <i class="fab fa-google-plus-g"></i>
-      </button>
-      <button class="btn btn-lg btn-twitter" (click)="onClickTwitterLogin()">
-        <i class="fab fa-twitter"></i>
-      </button>
-    </div>
+
   </div>
 </div>
-
