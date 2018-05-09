@@ -5,21 +5,13 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Product } from './product';
 import { CookieService } from 'ngx-cookie';
-
 import { BrowserModule } from '@angular/platform-browser';
-
 import { Http } from '@angular/http';
-
 import { NgModule, ErrorHandler } from '@angular/core';
-
 import { HttpModule } from '@angular/http';
-
 import { HttpClientModule, HttpHeaders, HttpParams } from '@angular/common/http';
-
 import { app } from 'firebase/app';
-
 import { HttpClient } from '@angular/common/http';
-
 import { Post } from './PostInterface';
 import { Observable } from 'rxjs/Observable';
 
@@ -62,14 +54,12 @@ export class SearchComponent implements OnInit {
   productText = '';
   productTab = [];
   cookieTab;
-  products = ['Bread', 'Potatoes', 'Onion'];
   productsToText = '';
   apiKey = 'a907d86f069da4a61ca8b890f77a476e';
   apiWebsite = 'http://food2fork.com/';
   apiRoot = '/api/search?key=' + this.apiKey + '&q=';
 
   constructor(private http: HttpClient, private _cookieService: CookieService) { }
-
 
   ngOnInit() {
     this.productsFromCookie();
@@ -127,7 +117,7 @@ export class SearchComponent implements OnInit {
 
   searchRecipes() {
     this.productsToText = '';
-    this.products.forEach(element => {
+    this.productTab.forEach(element => {
       this.productsToText += element + ',';
     });
     const url = `${this.apiRoot}` + this.productsToText;
