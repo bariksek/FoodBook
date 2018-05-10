@@ -12,8 +12,10 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpHeaders, HttpParams } from '@angular/common/http';
 import { app } from 'firebase/app';
 import { HttpClient } from '@angular/common/http';
-import { Post } from './PostInterface';
 import { Observable } from 'rxjs/Observable';
+import { createWiresService } from 'selenium-webdriver/firefox';
+import { ApiClass } from './ApiClass';
+import { Hits } from './Hits';
 
 
 @Component({  // don't touch this section. It is responsible for animation of the list.
@@ -55,9 +57,10 @@ export class SearchComponent implements OnInit {
   productTab = [];
   cookieTab;
   productsToText = '';
-  apiKey = 'a907d86f069da4a61ca8b890f77a476e';
-  apiWebsite = 'http://food2fork.com/';
-  apiRoot = '/api/search?key=' + this.apiKey + '&q=';
+  apiKey = '&app_id=51498885&app_key=13987527ce597b2b662dc0fa755c4054';
+  apiWebsite = 'https://api.edamam.com';
+  apiRoot = 'https://api.edamam.com/search?q=';
+  private data: any;
 
   constructor(private http: HttpClient, private _cookieService: CookieService) { }
 
@@ -105,13 +108,10 @@ export class SearchComponent implements OnInit {
     console.log(this.productTab);
   }
 
-  getObservableFromApi(url: string):  Observable<Array<Post>> {
-    return this.http.get<Array<Post>>(url);
-}
-
   getFromApi(url: string) {
-    this.getObservableFromApi(url).subscribe(posts => {
-      console.log(posts);
+    this.http.get<any>(url).subscribe(posts => {
+      this.data = posts;
+      console.log(this.data);
     });
 }
 
@@ -120,10 +120,8 @@ export class SearchComponent implements OnInit {
     this.productTab.forEach(element => {
       this.productsToText += element + ',';
     });
-    const url = `${this.apiRoot}` + this.productsToText;
+    const url = `${this.apiRoot}` + this.productsToText + this.apiKey;
     console.log(this.productsToText);
     this.getFromApi(url);
-
-
   }
 }

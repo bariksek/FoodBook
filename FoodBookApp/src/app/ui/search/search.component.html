@@ -37,9 +37,14 @@
       </div>
   </div>
 </div>
-
-<div class="gap2">
-    <p></p>
+ 
+<div class="container column1">
+ 
+  <div class="color-light rcorners"> <!-- trzeba będzie dać ograniczenie bo mamy 5 requestów na minute -->
+    <p class="life-container" *ngFor="let result of data?.hits"> 
+        <img src= "{{result.recipe.image}}">
+        {{result.recipe.label}}
+    </p>
   </div>
 
 <div class="container column1">

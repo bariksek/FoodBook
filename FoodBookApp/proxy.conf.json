@@ -1,8 +1,0 @@
-{
-  "/api/*": {
-    "target": "http://food2fork.com",
-    "secure": false,
-    "logLevel": "debug",
-    "changeOrigin": true
-  }
-}
