@@ -28,8 +28,11 @@
  
 <div class="container column1">
  
-  <div class="color-light rcorners">
+  <div class="color-light rcorners"> <!-- trzeba będzie dać ograniczenie bo mamy 5 requestów na minute -->
     <app-recipe></app-recipe>
+    <p class="life-container" *ngFor="let result of data?.hits"> 
+        {{result.recipe.label}}
+    </p>
   </div>
  
 </div>
