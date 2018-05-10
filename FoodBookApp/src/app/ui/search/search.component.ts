@@ -16,6 +16,7 @@ import { Observable } from 'rxjs/Observable';
 import { createWiresService } from 'selenium-webdriver/firefox';
 import { ApiClass } from './ApiClass';
 import { Hits } from './Hits';
+import { DataService } from '../../data.service';
 
 
 @Component({  // don't touch this section. It is responsible for animation of the list.
@@ -49,6 +50,7 @@ import { Hits } from './Hits';
 
 export class SearchComponent implements OnInit {
 
+  isLoggedIn: boolean;
   isProduct;
   itemCount;
   i;
@@ -62,9 +64,10 @@ export class SearchComponent implements OnInit {
   apiRoot = 'https://api.edamam.com/search?q=';
   private data: any;
 
-  constructor(private http: HttpClient, private _cookieService: CookieService) { }
+  constructor(private http: HttpClient, private _cookieService: CookieService, private data2: DataService) { }
 
   ngOnInit() {
+    this.data2.currentMessage.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
     this.productsFromCookie();
     this.itemCount = this.productTab.length; // on init count products
     this.productCheck();

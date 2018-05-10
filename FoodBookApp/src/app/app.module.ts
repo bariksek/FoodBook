@@ -25,7 +25,7 @@ import { CookieModule } from 'ngx-cookie';
 import { HttpModule } from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FavouritesComponent } from './favourites/favourites.component';
-
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
     FlashMessagesModule
 
   ],
-  providers: [AuthService, FlashMessagesService],
+  providers: [AuthService, FlashMessagesService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
