@@ -63,8 +63,6 @@ export class SearchComponent implements OnInit {
   apiWebsite = 'https://api.edamam.com';
   apiRoot = 'https://api.edamam.com/search?q=';
   private data: any;
-  start = 0;
-
 
   constructor(private http: HttpClient) { }
 
@@ -101,6 +99,5 @@ export class SearchComponent implements OnInit {
     const url = `${this.apiRoot}` + this.productsToText + this.apiKey;
     console.log(this.productsToText);
     this.getFromApi(url);
-    this.start = 1;
   }
 }
