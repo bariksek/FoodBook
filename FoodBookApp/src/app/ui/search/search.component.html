@@ -42,8 +42,13 @@
  
   <div class="color-light rcorners"> <!-- trzeba będzie dać ograniczenie bo mamy 5 requestów na minute -->
     <p class="life-container" *ngFor="let result of data?.hits"> 
-        <img src= "{{result.recipe.image}}">
-        {{result.recipe.label}}
+      <img src= "{{result.recipe.image}}">
+      {{result.recipe.label}}
+      {{result.recipe.url}}
+      <span *ngFor="let ingredient of result.recipe.ingredientLines">
+        {{ingredient}} <br>
+      </span>
+      Calories: {{result.recipe.calories}}
     </p>
   </div>
 
