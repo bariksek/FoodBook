@@ -42,8 +42,25 @@
  
   <div class="color-light rcorners"> <!-- trzeba będzie dać ograniczenie bo mamy 5 requestów na minute -->
     <p class="life-container" *ngFor="let result of data?.hits"> 
-        <img src= "{{result.recipe.image}}">
-        {{result.recipe.label}}
+      <img src= "{{result.recipe.image}}">
+      {{result.recipe.label}}
+      {{result.recipe.url}}
+      <span *ngFor="let ingredient of result.recipe.ingredientLines">
+        {{ingredient}} <br>
+      </span>
+      Calories: {{result.recipe.calories}}  
+
+      <!-- ponizej przycisk na polubienie -->
+
+      <a href="#" class="nav-item nav-link desktop-hide my-2 my-sm-0 margin mobile-hide" *ngIf="isLoggedIn" (click)="onClickLogout()"><i class="fas fa-heart"></i> Like</a>
+     
+      <!-- <button class="" *ngIf="isLogin" type="submit"><i class="fa fa-heart"></i> Like </button> -->
+      <!-- <button class="button button-like">
+          <i class="fa fa-heart"></i>
+          <span>Like</span>
+        </button> -->
+
     </p>
   </div>
 
+  
