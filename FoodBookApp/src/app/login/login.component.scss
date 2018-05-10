@@ -54,12 +54,14 @@
   position: absolute;
   color: #f50a16;
   font-size: 22px;
+  font-weight: 600;
   padding-top: 4px;
   left: 20px;
 }
 .form-group:last-of-type::before {
-  content: "\f084";
-  font-weight: 900;
+  content: "\f023";
+  font-weight: 600;
+  left: 21px;
 }
 .login {
   background-color: #f50a16;
@@ -72,4 +74,7 @@
 .rcorners {
   border-radius: 10px;
 }
-
+.acc{
+  margin-bottom: 10px;
+  padding-top: -5px;
+}

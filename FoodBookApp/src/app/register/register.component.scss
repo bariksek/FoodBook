@@ -38,14 +38,16 @@
   font-family: "Font Awesome 5 Free";
   content: "\f0e0";
   position: absolute;
-  color: #f50a16;
+  color: rgb(17, 10, 110);
+  font-weight: 600;
   font-size: 22px;
   padding-top: 4px;
   left: 20px;
 }
 .form-group:last-of-type::before {
-  content: "\f084";
-  font-weight: 900;
+  content: "\f023";
+  font-weight: 600;
+  left: 21px;
 }
 .register {
   background-color: rgb(17, 10, 110);
@@ -59,4 +61,9 @@
 .rcorners {
   border-radius: 10px;
 }
+
+.cssClass {
+  background-color: red;
+}
+
 
