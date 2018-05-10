@@ -62,7 +62,7 @@ export class SearchComponent implements OnInit {
   apiKey = '&app_id=51498885&app_key=13987527ce597b2b662dc0fa755c4054';
   apiWebsite = 'https://api.edamam.com';
   apiRoot = 'https://api.edamam.com/search?q=';
-  private data: any;
+  public data: any;
 
   constructor(private http: HttpClient, private _cookieService: CookieService, private data2: DataService) { }
 
