@@ -44,8 +44,8 @@
 <div class="color-light box-shadow rcorners " *ngFor="let result of data?.hits; let i = index" >
 
   <div class="header">
-    <p>{{result.recipe.label}}</p>
-  <img src= "{{result.recipe.image}}">
+    <p class="recipetitle">{{result.recipe.label}}</p>
+  <img src= "{{result.recipe.image}}" class="responsive">
   <br><br>
 
   <span *ngFor="let ingredient of result.recipe.ingredientLines">
