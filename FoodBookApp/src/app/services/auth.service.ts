@@ -3,11 +3,14 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class AuthService {
 
   currentUserEmail: string;
+  private messageSource = new BehaviorSubject<boolean>(false);
+  currentMessage = this.messageSource.asObservable();
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -48,6 +51,10 @@ export class AuthService {
   logout() {
     this.afAuth.auth.signOut();
     this.router.navigate(['/']);
+  }
+
+  changeMessage(isLoggedIn: boolean) {
+    this.messageSource.next(isLoggedIn);
   }
 }
 
