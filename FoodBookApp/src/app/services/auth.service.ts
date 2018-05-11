@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthService {
 
+  currentUserEmail: string;
+
   constructor(
     public afAuth: AngularFireAuth,
     public router: Router
@@ -36,7 +38,11 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
   }
   getAuth() {
-    return this.afAuth.authState.map( auth => auth);
+    return this.afAuth.authState.map(auth => auth);
+  }
+
+  currentUser(email) {
+    this.currentUserEmail = email;
   }
 
   logout() {

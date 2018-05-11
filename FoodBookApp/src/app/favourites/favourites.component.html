@@ -1,5 +1,16 @@
-<div class="container">
-  <div class="color-light rcorners box-shadow">
-      <p>nie ma tu jeszcze nic</p>
-  </div>
+<div class="container gap">
+  <div class="box-shadow color-dark rcorners"> <h1 style="text-align: center">Your favourite recipes</h1> </div>
+</div>
+
+<div class="container gap">
+      <div class="box-shadow column3 rcorners color-light" *ngFor="let item of favourites | async" >
+          <div>  <img src="{{ item.photoUrl }}">  </div>
+          <div>  {{ item.name }}  </div>
+          <div>  <a class="a" href='{{ item.url }}'>Click for more information</a>   </div>
+
+          <input type="submit" class="btn" value="Delete recipe" (click)="deleteItem(item.$key)">
+      </div>
+
+
+      <input type="submit" class="btn" value="Delete all recipes!" (click)="deleteItems()">
 </div>

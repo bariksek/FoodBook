@@ -1,0 +1,10 @@
+<div class="container">
+
+    <div class="box-shadow color-dark rcornersUpper"> <h1 style="text-align: center">Your favourite recipes calories graph</h1> </div>
+
+    <div class="box-shadow color-light rcornersLower"> <h3 style="text-align: center">Graph shold be inside</h3> <p></p>
+        Kalorie ulubionych przepisow:
+        <div *ngFor="let item of favourites | async"> --> {{item.calories}} <br> </div>
+    </div>
+
+</div>

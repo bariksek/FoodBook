@@ -9,8 +9,8 @@ export class DataService {
 
   constructor() { }
 
-  changeMessage(isLoggedIn: boolean){
-    this.messageSource.next(isLoggedIn)
+  changeMessage(isLoggedIn: boolean) {
+    this.messageSource.next(isLoggedIn);
   }
 
 }

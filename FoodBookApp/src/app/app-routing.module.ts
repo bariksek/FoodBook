@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { PrivatePageComponent } from './private-page/private-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'private', component: PrivatePageComponent },
   { path: 'favourites', component: FavouritesComponent },
+  { path: 'statistics', component: StatisticsComponent },
   { path: '**', component: NotFoundPageComponent },
 ];
 

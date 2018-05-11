@@ -14,6 +14,7 @@
       <!-- <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="register"><i class="fas fa-user-plus"></i> Sign Up </a> -->
       <a class="nav-item nav-link desktop-hide my-2 my-sm-0 margin desktop-hide logout" *ngIf="isLogin" (click)="onClickLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
       <a class="nav-item nav-link desktop-hide" *ngIf="isLogin"  routerLink="favourites"><i class="fas fa-heart"></i> Favourites</a>
+      <a class="nav-item nav-link desktop-hide" *ngIf="isLogin"  routerLink="statistics"><i class="fas fa-chart-pie"></i> Statistics</a>
       <div class="dropdown desktop-hide">
        <a class="my-2 my-sm-0 margin desktop-hide"><img src="{{userPhoto}}" *ngIf="isLogin" class="rounded-circle desktop-hide userphoto"></a>
        <span class="badge pill badge-secondary nav-item nav-link desktop-hide" *ngIf="isLogin">{{username}}</span>
@@ -34,6 +35,7 @@
 
       <div class="dropdown-content mobile-hide rcorners">
         <a href="#" *ngIf="isLogin" routerLink="favourites"><i class="fas fa-heart"></i> Favourites</a>
+        <a href="#" *ngIf="isLogin" routerLink="statistics"><i class="fas fa-chart-pie"></i> Statistics</a>
         <a href="#" class="nav-item nav-link desktop-hide my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
       </div>
     </div>
