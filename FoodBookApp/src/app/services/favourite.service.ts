@@ -9,15 +9,16 @@ import { AuthService } from './auth.service';
 @Injectable()
 export class FavouriteService {
 
-  private basePath = '/Favourites';
+  private basePath = '/Favourites/';
   itemsRef: AngularFireList<Favourite>;
   itemRef: AngularFireObject<Favourite>;
 
   constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth, public authService: AuthService) {
-     this.itemsRef = db.list(this.basePath);
+    this.itemsRef = db.list(this.basePath);
   }
 
-  getItemsList(): Observable<Favourite[]> {
+  getItemsList(username?): Observable<Favourite[]> {
+    this.itemsRef = this.db.list(this.basePath + username);
     return this.itemsRef.snapshotChanges().map((arr) => {
       return arr.map((snap) => Object.assign(snap.payload.val(), { $key: snap.key }));
     });
