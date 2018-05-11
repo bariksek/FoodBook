@@ -48,8 +48,11 @@
   <img src= "{{result.recipe.image}}" class="responsive">
   <br><br>
 
+  <p>Ingredients: </p>
   <span *ngFor="let ingredient of result.recipe.ingredientLines">
+    <li>
     {{ingredient}} <br>
+  </li>
   </span>
   <br>
   <p>Calories: {{result.recipe.calories}}</p>
