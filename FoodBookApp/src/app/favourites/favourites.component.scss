@@ -36,11 +36,12 @@ img {
   background: rgba(0,0,0,0.15);
   border-radius: 3px 0 0 3px;}
 
-.btn-labeled {
-  padding-top: 0;
-  padding-bottom: 0;
+// .btn-labeled {
+//   padding-top: 0;
+//   padding-bottom: 0;
 
-}
+// }
+
 .btn { 
   margin-top:10px; 
   margin-bottom:10px; 
@@ -52,22 +53,21 @@ img {
     margin-bottom: 10px;
 
 }
-// @media screen and (max-width: 400px) {
-//   .pic-fav {
-//     height: 300px;
-//     width: 300px;
-//   }
-// }   
 
-input.btn2 {
-  margin-bottom: 10px;
-  border: 0;
-  display: block;
-  margin: auto;
-  width: 90%;
-  padding: 1em 2em;
-  background: #A5F883; //button color Add an product
-  color: #003A61;
-  margin-bottom: 1em;
-  cursor: pointer;
-}
+
+// .center {
+//   margin: 0 auto;
+//   text-align: center;
+// }
+@media screen and (max-width: 600px) {
+  .pic-fav {
+    height: 300px;
+    width: 300px;
+  }
+
+  .center {
+    margin: 0 auto;
+    text-align: center;
+  }
+}   
+
