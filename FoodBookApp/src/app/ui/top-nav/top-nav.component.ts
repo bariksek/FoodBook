@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
-
-import { DataService } from '../../data.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -18,15 +16,15 @@ export class TopNavComponent implements OnInit {
   constructor(
     private _cookieService: CookieService,
     public authService: AuthService,
-    private data2: DataService
+
   ) { }
 
   ngOnInit() {
-    this.data2.currentMessage.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
+    this.authService.currentMessage.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
     this.authService.getAuth().subscribe(auth => {
       if (auth) {
         this.isLogin = true;
-        this.data2.changeMessage(true);
+        this.authService.changeMessage(true);
         this.username = auth.displayName;
         this.userEmail = auth.email;
         this.userPhoto = auth.photoURL;
@@ -39,7 +37,7 @@ export class TopNavComponent implements OnInit {
         }
       } else {
         this.isLogin = false;
-        this.data2.changeMessage(false);
+        this.authService.changeMessage(false);
       }
     });
   }

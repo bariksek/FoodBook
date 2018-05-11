@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
- 
+
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations'; // important, animation
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -15,10 +15,10 @@ import { Observable } from 'rxjs/Observable';
 import { createWiresService } from 'selenium-webdriver/firefox';
 import { ApiClass } from './ApiClass';
 import { Hits } from './Hits';
-import { DataService } from '../../data.service';
+import { AuthService} from '../../services/auth.service';
 import { FavouriteService } from '../../services/favourite.service';
 import { Favourite } from '../../services/favourite';
- 
+
 @Component({  // don't touch this section. It is responsible for animation of the list.
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -26,16 +26,16 @@ import { Favourite } from '../../services/favourite';
   animations: [
     trigger('products', [
       transition('* => *', [
- 
+
         query(':enter', style({ opacity: 0 }), { optional: true }),
- 
+
         query(':enter', stagger('300ms', [
           animate('.6s ease-in', keyframes([
             style({ opacity: 0, transform: 'translateY(-75%)', offset: 0 }),
             style({ opacity: .5, transform: 'translateY(35px)', offset: 0.3 }),
             style({ opacity: 1, transform: 'translateY(0)', offset: 1.0 }),
           ]))]), { optional: true }),
- 
+
         query(':leave', stagger('300ms', [
           animate('.6s ease-in', keyframes([
             style({ opacity: 1, transform: 'translateY(0)', offset: 0 }),
@@ -44,12 +44,12 @@ import { Favourite } from '../../services/favourite';
           ]))]), { optional: true })
       ])
     ])
- 
+
   ]
 })
- 
+
 export class SearchComponent implements OnInit {
- 
+
   isLoggedIn: boolean;
   isProduct;
   itemCount;
@@ -64,17 +64,17 @@ export class SearchComponent implements OnInit {
   apiWebsite = 'https://api.edamam.com';
   apiRoot = 'https://api.edamam.com/search?q=';
   data: any;
- 
-  constructor(private http: HttpClient, private _cookieService: CookieService, private data2: DataService
+
+  constructor(private http: HttpClient, private _cookieService: CookieService, private data2: AuthService
               , private favouriteService: FavouriteService) { }
- 
+
   ngOnInit() {
     this.data2.currentMessage.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
     this.productsFromCookie();
     this.itemCount = this.productTab.length; // on init count products
     this.productCheck();
   }
- 
+
   createFavourite(name, img, url, calories) {
     this.favourite.name = name;
     this.favourite.photoUrl = img;
@@ -83,14 +83,14 @@ export class SearchComponent implements OnInit {
     this.favouriteService.createItem(this.favourite);
     this.favourite = new Favourite();
   }
- 
+
   productCheck() {
     if (this.itemCount === 0) {
       this.isProduct = false;
       this._cookieService.removeAll();
     } else { this.isProduct = true; }
   }
- 
+
   productsFromCookie() {
     this.cookieTab = this._cookieService.getAll();
     console.log(this._cookieService.getAll());
@@ -101,7 +101,7 @@ export class SearchComponent implements OnInit {
     }
     console.log(this.productTab);
   }
- 
+
   addItem() {
     if (this.productText === '') { } else { // if chosen product is empty do nothing
       this.productTab.push(this.productText);  // else add to the array
@@ -112,7 +112,7 @@ export class SearchComponent implements OnInit {
       this.productCheck();
     }
   }
- 
+
   removeItem(i) {
     console.log('Cookie "' + this.productTab[i] + '" usuniete');
     this.productTab.splice(i, 1);
@@ -121,14 +121,14 @@ export class SearchComponent implements OnInit {
     this.productCheck();
     console.log(this.productTab);
   }
- 
+
   getFromApi(url: string) {
     this.http.get<any>(url).subscribe(posts => {
       this.data = posts;
       console.log(this.data);
     });
 }
- 
+
   searchRecipes() {
     this.productsToText = '';
     this.productTab.forEach(element => {
