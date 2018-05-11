@@ -3,14 +3,17 @@
 </div>
 
 <div class="container gap">
-      <div class="box-shadow column3 rcorners color-light" *ngFor="let item of favourites | async" >
-          <div>  <img src="{{ item.photoUrl }}">  </div>
-          <div>  {{ item.name }}  </div>
-          <div>  <a class="a" href='{{ item.url }}'>Click for more information</a>   </div>
 
-          <input type="submit" class="btn" value="Delete recipe" (click)="deleteItem(item.$key)">
+      <div class="row box-shadow rcorners color-light" *ngFor="let item of favourites | async" >
+
+          <div class="col-sm"> <img src="{{ item.photoUrl }}" class="pic-fav" width="100px" height="100px">  </div>
+          <div class="col-6-sm">  <h3 class="">{{ item.name }}</h3> <br>
+          <a class="" href='{{ item.url }}' style="color: white">Click for more information</a> </div>
+          <div class="col-sm"> </div><button type="button" class="btn btn-labeled btn-danger" (click)="deleteItem(item.$key)">
+              <span class="btn-label"><i class="glyphicon glyphicon-trash" (click)="deleteItem(item.$key)"></i></span>Delete</button>
+          
       </div>
 
-
-      <input type="submit" class="btn" value="Delete all recipes!" (click)="deleteItems()">
+      <!-- <input type="submit" class="" value="Delete all recipes!" (click)="deleteItems()"> -->
+      <!-- <input type="submit" class="btn" value="Delete all recipes!" (click)="deleteItems()"> -->
 </div>

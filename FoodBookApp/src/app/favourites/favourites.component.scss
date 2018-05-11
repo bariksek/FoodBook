@@ -1,3 +1,5 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 p {
   padding: 1em;
 }
@@ -20,7 +22,39 @@ img {
 @media screen and (max-width: 736px) {
   .container {
     max-width: 100%;
+    padding-top: 10px;
     padding-right: 0px;
     padding-left: 0px;
   }
 }
+
+.btn-label {
+  position: relative;
+  left: -12px;
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.15);
+  border-radius: 3px 0 0 3px;}
+
+.btn-labeled {
+  padding-top: 0;
+  padding-bottom: 0;
+
+}
+.btn { 
+  margin-top:10px; 
+  margin-bottom:10px; 
+  margin-right: 10px
+}
+
+.pic-fav {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+@media screen and (max-width: 400px) {
+  .pic-fav {
+    height: 300px;
+    width: 300px;
+  }
+} // css stylizujace przycisk "dodaj do ulubionych"
