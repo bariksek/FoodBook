@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FavouriteService } from '../services/favourite.service';
 import { Favourite } from '../services/favourite';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-statistics',
@@ -13,11 +14,17 @@ export class StatisticsComponent implements OnInit {
   @Input() favourite: Favourite;
   favourites: Observable<Favourite[]>;
 
-  constructor(private favouriteService: FavouriteService) {
+  constructor(private favouriteService: FavouriteService, public authService: AuthService) {
     this.favourites = this.favouriteService.getItemsList();
    }
 
-  ngOnInit() {
-  }
+   ngOnInit() {
+      this.authService.getAuth().subscribe(auth => {
+        if (auth) {
+        this.favourites = this.favouriteService.getItemsList(auth.displayName);
+        console.log('Wykryto użytkownika: ' + auth.displayName + ', podpinam do osobistej bazy statystyk.');
+      }
+    });
+}
 
 }

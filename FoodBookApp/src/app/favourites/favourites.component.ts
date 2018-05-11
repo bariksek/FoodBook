@@ -14,19 +14,18 @@ export class FavouritesComponent implements OnInit {
   @Input() favourite: Favourite;
   favourites: Observable<Favourite[]>;
 
-  constructor(private favouriteService: FavouriteService) {
-
-    /* this.authService.getAuth().subscribe(auth => {
-      this.favourites = this.favouriteService.getItemsList(auth.displayName);
-      console.log('Wykryto użytkownika: ' + auth.displayName + ', podpinam do osobistej bazy ulubionych.');
-    });
-    console.log('Pomyslnie połączono z bazą danych.'); */
-
+  constructor(private favouriteService: FavouriteService, public authService: AuthService) {
     this.favourites = this.favouriteService.getItemsList();
   }
 
 
 ngOnInit() {
+    this.authService.getAuth().subscribe(auth => {
+      if (auth) {
+        this.favourites = this.favouriteService.getItemsList(auth.displayName);
+        console.log('Wykryto użytkownika: ' + auth.displayName + ', podpinam do osobistej bazy ulubionych.');
+      }
+    });
 }
 
 deleteItem(key) {
