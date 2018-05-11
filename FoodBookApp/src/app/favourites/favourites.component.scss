@@ -52,13 +52,15 @@ img {
     margin-bottom: 10px;
 
 }
-@media screen and (max-width: 400px) {
-  .pic-fav {
-    height: 300px;
-    width: 300px;
-  }
-} 
+// @media screen and (max-width: 400px) {
+//   .pic-fav {
+//     height: 300px;
+//     width: 300px;
+//   }
+// }   
+
 input.btn2 {
+  margin-bottom: 10px;
   border: 0;
   display: block;
   margin: auto;
