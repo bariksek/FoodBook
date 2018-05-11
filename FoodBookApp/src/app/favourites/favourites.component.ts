@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FavouriteService } from '../services/favourite.service';
+import { Favourite } from '../services/favourite';
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-favourites',
@@ -7,9 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouritesComponent implements OnInit {
 
-  constructor() { }
+  @Input() favourite: Favourite;
+  favourites: Observable<Favourite[]>;
 
-  ngOnInit() {
+  constructor(private favouriteService: FavouriteService) {
+
+    /* this.authService.getAuth().subscribe(auth => {
+      this.favourites = this.favouriteService.getItemsList(auth.displayName);
+      console.log('Wykryto użytkownika: ' + auth.displayName + ', podpinam do osobistej bazy ulubionych.');
+    });
+    console.log('Pomyslnie połączono z bazą danych.'); */
+
+    this.favourites = this.favouriteService.getItemsList();
   }
+
+
+ngOnInit() {
+}
+
+deleteItem(key) {
+  this.favouriteService.deleteItem(key);
+}
+
+deleteItems() {
+  this.favouriteService.deleteAll();
+}
 
 }

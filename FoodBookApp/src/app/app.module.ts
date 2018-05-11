@@ -8,7 +8,6 @@ import { HomeComponent } from './ui/home/home.component';
 import { SearchComponent } from './ui/search/search.component';
 /* import { CoreComponent } from './core/core.component'; */
 import { RecipeComponent } from './recipe/recipe.component';
-import { FridgeComponent } from './fridge/fridge.component';
 import { TopNavComponent } from './ui/top-nav/top-nav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -26,6 +25,8 @@ import { HttpModule } from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { DataService } from './data.service';
+import { FavouriteService } from './services/favourite.service';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +34,13 @@ import { DataService } from './data.service';
     HomeComponent,
     SearchComponent,
     RecipeComponent,
-    FridgeComponent,
     TopNavComponent,
     LoginComponent,
     RegisterComponent,
     PrivatePageComponent,
     NotFoundPageComponent,
-    FavouritesComponent
+    FavouritesComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +55,7 @@ import { DataService } from './data.service';
     FlashMessagesModule
 
   ],
-  providers: [AuthService, FlashMessagesService, DataService],
+  providers: [AuthService, FlashMessagesService, DataService, FavouriteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
