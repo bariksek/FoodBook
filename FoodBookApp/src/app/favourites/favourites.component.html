@@ -5,12 +5,11 @@
 <div class="container gap">
 
       <div class="row box-shadow rcorners color-light marginLR" *ngFor="let item of favourites | async" >
-          <div class="col-sm center"> <img src="{{ item.photoUrl }}" class="pic-fav" width="100px" height="100px">  </div>
-          <div class="col-6-sm center">  <h3 style="text-align: center">{{ item.name }}</h3>
-          <a href='{{ item.url }}' target="_blank" style="color: white; text-align: center">Click for more information</a> </div>
+          <div class="col-sm center align"> <img src="{{ item.photoUrl }}" width="100px" height="100px">  </div>
+          <div class="col-6-sm center text-respo align center-text">  <h3 class="title-size">{{ item.name }}</h3>
+          <a href='{{ item.url }}' target="_blank" style="color: white">Click for more information</a> </div>
           <div class="col-sm center"> </div><button type="button" class="btn btn-labeled btn-danger center" (click)="deleteItem(item.$key)">
             <i class="glyphicon glyphicon-remove" (click)="deleteItem(item.$key)"></i></button>
       </div>
-      <input type="submit" class="btn2 btn btn-labeled btn-danger" value="DELETE ALL RECIPES" (click)="deleteItems()">
-
 </div>
+<input type="submit" class="btn2 btn btn-labeled btn-danger" value="DELETE ALL" (click)="deleteItems()">

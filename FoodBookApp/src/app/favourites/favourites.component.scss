@@ -7,6 +7,11 @@
   padding-left: 0px;
 }
 
+.center-text {
+  margin: 0 auto;
+  text-align: center;
+}
+
 .marginLR{
   max-width: 100%;
   margin-left: 0.17%;
@@ -19,6 +24,8 @@
 
 img {
     border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .btn-label {
@@ -33,20 +40,16 @@ img {
 .btn {
   margin-top:10px;
   margin-bottom:10px;
-  margin-right: 10px
+  margin-right: 10px;
 }
 
-.pic-fav {
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-}
 
 @media screen and (max-width: 600px) {
-  .pic-fav {
-    max-width: 100%;
-    height: auto;
-  }
+  // .pic-fav {
+  //   max-width: 100%;
+  //   height: auto;
+
+  // }
 
   .btn{
     width: 100px;
@@ -54,11 +57,25 @@ img {
 
   img {
     width: auto;
+    max-width: 100%;
+    height: auto;
   }
 
   .center {
     margin: 0 auto;
     text-align: center;
+  }
+
+  .text-respo {
+    font-size: 100%;
+    max-width: 70%;
+  }
+  
+}
+
+@media screen and (max-width: 800px) {
+  .title-size {
+    font-size: 90%;
   }
 }
 
