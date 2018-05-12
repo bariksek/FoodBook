@@ -41,30 +41,30 @@
 <div class="gap2"><p></p></div>
 
 <div class="recipe">
-<div class="color-light box-shadow rcorners " *ngFor="let result of data?.hits; let i = index" >
+  <div class="color-light box-shadow rcorners" *ngFor="let result of data?.hits" >
+    <div class="header">
+      <p class="recipetitle">{{result.recipe.label}}</p>
+      <img src= "{{result.recipe.image}}" class="responsive">
+      <br><br>
+      <p class="ing">Ingredients: </p>
+      <span *ngFor="let ingredient of result.recipe.ingredientLines">
+        <li class="table">
+          {{ingredient}}
+        </li>
+      </span>
+      <br>
+      <p>Calories: {{result.recipe.calories | number:'1.0-0'}}</p>
+      <br>
+    </div>
+    <div style="text-align: center">
+        <div *ngIf="isLoggedIn" >
+          <button class="btn" (click)="createFavourite(result.recipe.label, result.recipe.image, result.recipe.url, result.recipe.calories)"
+            onClick="this.disabled=true;"> <!-- this.value='Added to favourites'; -->
+            <i class="fas fa-heart"> Add to Favourites</i>
+          </button>
+        </div>
+        <a class="a moreInformation" href='{{result.recipe.url}}'>Click for more information</a>
+    <div>
 
-  <div class="header">
-    <p class="recipetitle">{{result.recipe.label}}</p>
-  <img src= "{{result.recipe.image}}" class="responsive">
-  <br><br>
-
-  <p class="ing">Ingredients: </p>
-  <span *ngFor="let ingredient of result.recipe.ingredientLines">
-    <li class="table">
-    {{ingredient}} <br>
-  </li>
-  </span>
-  <br>
-  <p>Calories: {{result.recipe.calories | number:'1.0-0'}}</p>
-   <br>
-
-  <button class="btn" *ngIf="isLoggedIn" (click)="createFavourite(result.recipe.label, result.recipe.image, result.recipe.url, result.recipe.calories)">
-    <i class="fas fa-heart">Add to favourites</i>
-  </button>
-
-  <br><br>
-    <a class="a" href='{{result.recipe.url}}'>Click for more information</a>
   </div>
-
-</div>
 </div>
