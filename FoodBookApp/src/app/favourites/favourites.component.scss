@@ -43,16 +43,21 @@ img {
     grid-template-columns: 1fr;
   }
 
+.btn-right {
+  border-radius: 0px 15px 15px 0px;
+  height: 120px;
+}
+
 
 @media screen and (max-width: 600px) {
-  // .pic-fav {
-  //   max-width: 100%;
-  //   height: auto;
-
-  // }
 
   .btn{
     width: 100px;
+  }
+
+  .btn-right {
+    border-radius: 5px;
+    height: 100%;
   }
 
   img {
@@ -66,9 +71,15 @@ img {
     text-align: center;
   }
 
+  .row{
+    display: grid;
+    padding-bottom: 0.8em;
+  }
+
   .text-respo {
     font-size: 100%;
     max-width: 70%;
+    padding-bottom: 0.4em;
   }
 
 }
