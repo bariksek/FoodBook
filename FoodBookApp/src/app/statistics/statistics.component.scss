@@ -28,7 +28,11 @@ h3{
 
 .container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
+  padding: 1em;
+  max-width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 @media screen and (max-width: 736px) {
@@ -42,3 +46,9 @@ h3{
     font-size: 0.8em;
   }
 }
+.btn-primary {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+

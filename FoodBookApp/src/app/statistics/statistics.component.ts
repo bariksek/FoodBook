@@ -64,7 +64,7 @@ export class StatisticsComponent implements OnInit {
             x: {
               type: 'category',
               tick: {
-                rotate: 75,
+                rotate: 80,
                 multiline: false,
                 tooltip: true
               },
