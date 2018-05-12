@@ -4,7 +4,7 @@
 
 <div class="container gap">
 
-      <div class="row box-shadow rcorners color-light" *ngFor="let item of favourites | async" >
+      <div class="row box-shadow rcorners color-light marginLR" *ngFor="let item of favourites | async" >
           <div class="col-sm center"> <img src="{{ item.photoUrl }}" class="pic-fav" width="100px" height="100px">  </div>
           <div class="col-6-sm center">  <h3 style="text-align: center">{{ item.name }}</h3>
           <a href='{{ item.url }}' target="_blank" style="color: white; text-align: center">Click for more information</a> </div>

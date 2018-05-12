@@ -7,13 +7,9 @@
   padding-left: 0px;
 }
 
-p {
-  padding: 1em;
-}
-
-.column3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.marginLR{
+  max-width: 100%;
+  margin-left: 0.17%;
 }
 
 .gap{
@@ -33,17 +29,6 @@ img {
   background: rgba(0,0,0,0.15);
   border-radius: 3px 0 0 3px;}
 
-// .btn-labeled {
-//   padding-top: 0;
-//   padding-bottom: 0;
-
-// }
-.marginLR{
-  max-width: 100%;
-  padding-top: 10px;
-  padding-right: 0px;
-  padding-left: 0px;
-}
 
 .btn {
   margin-top:10px;
@@ -57,15 +42,18 @@ img {
 
 }
 
-
-// .center {
-//   margin: 0 auto;
-//   text-align: center;
-// }
 @media screen and (max-width: 600px) {
   .pic-fav {
-    height: 300px;
-    width: 300px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .btn{
+    width: 100px;
+  }
+
+  img {
+    width: auto;
   }
 
   .center {
