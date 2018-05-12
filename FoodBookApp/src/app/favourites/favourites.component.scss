@@ -38,10 +38,10 @@ img {
 
 
 .btn {
-  margin-top:10px;
-  margin-bottom:10px;
-  margin-right: 10px;
-}
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
 
 @media screen and (max-width: 600px) {
@@ -70,7 +70,7 @@ img {
     font-size: 100%;
     max-width: 70%;
   }
-  
+
 }
 
 @media screen and (max-width: 800px) {
