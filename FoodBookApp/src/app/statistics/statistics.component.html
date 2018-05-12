@@ -1,10 +1,19 @@
+<link rel="stylesheet" href="http://naver.github.io/billboard.js/release/latest/dist/billboard.min.css">
 <div class="container">
 
     <div class="box-shadow color-dark rcornersUpper"> <h1 style="text-align: center">Your favourite recipes calories graph</h1> </div>
 
     <div class="box-shadow color-light rcornersLower"> <h3 style="text-align: center">Graph shold be inside</h3> <p></p>
-        Kalorie ulubionych przepisow:
-        <div *ngFor="let item of favourites | async"> --> {{item.calories}} <br> </div>
+        <button class="btn-primary" (click)="showGraph()" *ngIf="buttonVisible">Click</button>
+
+        <div *ngIf="graph">
+          <angular-billboard *ngFor="let chart of charts"  [chart]="chart">
+          </angular-billboard>
+        </div>
+
+
     </div>
+
+
 
 </div>

@@ -55,7 +55,7 @@
   </li>
   </span>
   <br>
-  <p>Calories: {{result.recipe.calories}}</p>
+  <p>Calories: {{result.recipe.calories | number:'1.0-0'}}</p>
    <br>
 
   <button class="btn" *ngIf="isLoggedIn" (click)="createFavourite(result.recipe.label, result.recipe.image, result.recipe.url, result.recipe.calories)">

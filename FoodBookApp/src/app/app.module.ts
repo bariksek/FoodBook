@@ -26,6 +26,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { FavouriteService } from './services/favourite.service';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { AngularBillboardModule } from 'angular-billboard';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
     AngularFireDatabaseModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    FlashMessagesModule
+    FlashMessagesModule,
+    AngularBillboardModule
 
   ],
   providers: [AuthService, FlashMessagesService, FavouriteService],
