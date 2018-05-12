@@ -3,10 +3,24 @@
 }
 
 .container {
+  font-size: 100%;
   max-width: 100%;
   padding-right: 0px;
   padding-left: 0px;
 }
+
+h1{
+  text-align: center;
+  font-size: 2em;
+  padding: 0.3em;
+}
+
+h3{
+  text-align: center;
+  font-size: 1.3em;
+  padding-top: 0.5em;
+}
+
 
 .rcornersLower {
   border-radius: 0px 0px 15px 15px;
@@ -15,4 +29,16 @@
 .container {
   display: grid;
   grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 736px) {
+  h1{
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  h3{
+    text-align: center;
+    font-size: 0.8em;
+  }
 }
