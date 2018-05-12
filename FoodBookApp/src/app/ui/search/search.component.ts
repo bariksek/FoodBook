@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations'; // important, animation
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -12,7 +12,7 @@ import { app } from 'firebase/app';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { createWiresService } from 'selenium-webdriver/firefox';
-import { AuthService} from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { FavouriteService } from '../../services/favourite.service';
 import { Favourite } from '../../services/favourite';
 
@@ -62,13 +62,23 @@ export class SearchComponent implements OnInit {
   data: any; /* variable for storing api results */
 
   constructor(private http: HttpClient, private _cookieService: CookieService, private data2: AuthService
-              , private favouriteService: FavouriteService) { }
+    , private favouriteService: FavouriteService) { }
+
+
+  @Input()
+  favourites: Observable<Favourite[]>;
 
   ngOnInit() {
     this.data2.currentMessage.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
     this.productsFromCookie();
     this.itemCount = this.productTab.length; // on init count products
     this.productCheck();
+    this.data2.getAuth().subscribe(auth => {
+      if (auth) {
+        this.favourites = this.favouriteService.getItemsList(auth.displayName);
+        console.log('Wykryto użytkownika: ' + auth.displayName + ', podpinam do osobistej bazy ulubionych.');
+      }
+    });
   }
 
   createFavourite(name, img, url, calories) {
@@ -123,7 +133,7 @@ export class SearchComponent implements OnInit {
       this.data = posts;
       console.log(this.data);
     });
-}
+  }
 
   searchRecipes() { /* create products separated by comas and create a query for api */
     this.productsToText = '';
