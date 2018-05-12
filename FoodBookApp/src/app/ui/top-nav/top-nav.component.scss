@@ -1,8 +1,10 @@
-
 .container {
   display: grid;
   grid-template-columns: 100%;
   padding: 1em;
+  max-width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .navbar-dark {
@@ -34,14 +36,7 @@ button.margin {
   }
 }
 
-@media screen and (max-width: 736px) {
-  .container {
-    max-width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-}
-.rounded-circle{
+.rounded-circle {
   width: 30px;
 }
 
@@ -55,7 +50,7 @@ button.margin {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -66,21 +61,26 @@ button.margin {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd }
+.dropdown-content a:hover {
+  background-color: #ddd
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 .badge {
   background-color: rgba(0, 0, 0, 0);
 }
+
 .userphoto {
   margin-left: -1%;
 }
+
 .logout {
   cursor: pointer;
 }
+
 .navbar-brand {
   font-size: 22px;
-
 }

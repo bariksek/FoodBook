@@ -14,6 +14,14 @@ body {
   color: #fff;
 }
 
+@media screen and (max-width: 736px) {
+  .container {
+    max-width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
 .rcorners {
   border-radius: 15px;
 }

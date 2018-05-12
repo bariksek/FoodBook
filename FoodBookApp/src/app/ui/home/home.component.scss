@@ -54,14 +54,14 @@ p {
   border-radius: 25px;
 }
 
-@media screen and (max-width: 736px) {
-  .container {
-    max-width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
+.container {
+  max-width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
 }
+
 /*Mid resolution tablet*/
+
 @media screen and (min-width: 401px) and (max-width: 992px) {
   .column3 {
     width: 50%;
@@ -79,6 +79,7 @@ p {
 }
 
 /*Low resolution mobile phone*/
+
 @media screen and (min-width: 0px) and (max-width: 400px) {
   .column3 {
     width: 90%;

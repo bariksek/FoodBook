@@ -38,9 +38,9 @@ export class StatisticsComponent implements OnInit {
 }
 
   addChart() {
-    this.favourites.forEach(element => {
-      element.forEach(inside => {
-        this.caloriesTab.push(inside.calories);
+    this.favourites.forEach(favouriteObject => {
+      favouriteObject.forEach(inside => {
+        this.caloriesTab.push(inside.calories + '');
         this.namesTab.push(inside.name);
       });
     });

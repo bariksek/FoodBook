@@ -22,6 +22,9 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "title1" "content1" "gap" "title2" "content2" "gap2";
+  max-width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .header {
@@ -175,11 +178,6 @@ input.btn {
   .column2 {
     display: grid;
     grid-template-columns: 1fr;
-  }
-  .container {
-    max-width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
   }
   .recipe {
     padding-right: 0px;
