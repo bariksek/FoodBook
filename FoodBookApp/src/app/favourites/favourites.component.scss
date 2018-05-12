@@ -1,5 +1,12 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+.container {
+  max-width: 100%;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 p {
   padding: 1em;
 }
@@ -18,16 +25,6 @@ img {
     border-radius: 5%;
 }
 
-
-@media screen and (max-width: 736px) {
-  .container {
-    max-width: 100%;
-    padding-top: 10px;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-}
-
 .btn-label {
   position: relative;
   left: -12px;
@@ -41,10 +38,16 @@ img {
 //   padding-bottom: 0;
 
 // }
+.marginLR{
+  max-width: 100%;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
 
-.btn { 
-  margin-top:10px; 
-  margin-bottom:10px; 
+.btn {
+  margin-top:10px;
+  margin-bottom:10px;
   margin-right: 10px
 }
 
@@ -69,5 +72,5 @@ img {
     margin: 0 auto;
     text-align: center;
   }
-}   
+}
 

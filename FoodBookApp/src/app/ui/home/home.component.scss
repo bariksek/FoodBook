@@ -54,14 +54,14 @@ p {
   border-radius: 25px;
 }
 
-@media screen and (max-width: 736px) {
-  .container {
-    max-width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
+.container {
+  max-width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
 }
+
 /*Mid resolution tablet*/
+
 @media screen and (min-width: 401px) and (max-width: 992px) {
   .column3 {
     width: 50%;
@@ -79,7 +79,8 @@ p {
 }
 
 /*Low resolution mobile phone*/
-@media screen and (min-width: 0px) and (max-width: 400px) {
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
   .column3 {
     width: 90%;
     margin-left: 5%;
@@ -104,6 +105,14 @@ p {
 @media all and (max-width: 1000px) {
   p {
     font-size: 1.2em;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .above1000px {
+    font-size: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
   }
 }
 
