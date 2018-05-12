@@ -53,14 +53,13 @@ export class SearchComponent implements OnInit {
   i;
   favourite: Favourite = new Favourite();
   buttonText = 'Add an product';
-  productText = '';
-  productTab = [];
+  productText = ''; /* product that you write down in search */
+  productTab = []; /* array - virtual fridge */
   cookieTab;
-  productsToText = '';
-  apiKey = '&app_id=51498885&app_key=13987527ce597b2b662dc0fa755c4054';
-  apiWebsite = 'https://api.edamam.com';
-  apiRoot = 'https://api.edamam.com/search?q=';
-  data: any;
+  productsToText = ''; /* variable for storing products from array to text with coma */
+  apiKey = '&app_id=51498885&app_key=13987527ce597b2b662dc0fa755c4054'; /* api key and id */
+  apiRoot = 'https://api.edamam.com/search?q='; /* api website with search?q section */
+  data: any; /* variable for storing api results */
 
   constructor(private http: HttpClient, private _cookieService: CookieService, private data2: AuthService
               , private favouriteService: FavouriteService) { }
@@ -88,7 +87,7 @@ export class SearchComponent implements OnInit {
     } else { this.isProduct = true; }
   }
 
-  productsFromCookie() {
+  productsFromCookie() { /* getting products from cookie */
     this.cookieTab = this._cookieService.getAll();
     console.log(this._cookieService.getAll());
     for (this.i = 0; ; this.i++) {
@@ -110,7 +109,7 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  removeItem(i) {
+  removeItem(i) { /* method responsible for remove item from your virtual fridge */
     console.log('Cookie "' + this.productTab[i] + '" usuniete');
     this.productTab.splice(i, 1);
     this._cookieService.remove(i);
@@ -119,14 +118,14 @@ export class SearchComponent implements OnInit {
     console.log(this.productTab);
   }
 
-  getFromApi(url: string) {
+  getFromApi(url: string) {/* get data from api to data variable and write it down in console */
     this.http.get<any>(url).subscribe(posts => {
       this.data = posts;
       console.log(this.data);
     });
 }
 
-  searchRecipes() {
+  searchRecipes() { /* create products separated by comas and create a query for api */
     this.productsToText = '';
     this.productTab.forEach(element => {
       this.productsToText += element + ',';
