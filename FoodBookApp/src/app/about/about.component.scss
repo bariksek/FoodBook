@@ -2,45 +2,15 @@
   max-width: 100%;
   padding-right: 0px;
   padding-left: 0px;
+  font-size: 20px;
 }
-
-/* h1 {
-  padding: 1em;
-  text-align: center;
-  font-weight: bold;
-  font-size: 30px;
-} */
 
 .about1 {
-  font-style: italic;
   padding: 1em;
   text-align: center;
 }
 
-.link {
-  font-style: italic;
-  font-size: 20px;
-  text-decoration: underline;
-  padding: 1em;
-}
-
-.btn{
-  border: 0;
-  display: block;
-  margin: auto;
-  width: 45%;
-  padding: 1em 2em;
-  background: #003A61; 
-  color: rgb(255, 255, 255);
-  /* margin-bottom: 3em; */
-  margin-top: 1em;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-
 .members {
-  text-decoration: underline;
   font-size: 20px;
   text-align:center;
 }
@@ -50,4 +20,51 @@
   list-style-type: none;
   text-align:center;
   
+}
+// +
+
+input.btn {
+  border: 0;
+  display: block;
+  margin: auto;
+  width: 90%;
+  padding: 1em 2em;
+  background: #A5F883; 
+  color: #003A61;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.btn{
+  border: 0;
+  display: block;
+  margin: auto;
+  width: 90%;
+  padding: 1em 2em;
+  background: #A5F883; 
+  color: #003A61;
+  margin-bottom: 1em;
+}
+
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.column3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 800px) {
+  .column3 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media screen and (max-width: 736px) {
+  input.btn {
+    width: 50%;
+  }
 }
