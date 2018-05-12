@@ -27,6 +27,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { FavouriteService } from './services/favourite.service';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { AngularBillboardModule } from 'angular-billboard';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AngularBillboardModule } from 'angular-billboard';
     PrivatePageComponent,
     NotFoundPageComponent,
     FavouritesComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

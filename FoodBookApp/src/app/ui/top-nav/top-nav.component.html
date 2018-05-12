@@ -10,6 +10,8 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" routerLink=""> <i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" routerLink="search"><i class="fas fa-search"></i> Search </a>
+      <a class="nav-item nav-link" routerLink="about"><i class="fas fa-address-card"></i> About project </a>
+
       <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </a>
       <!-- <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="register"><i class="fas fa-user-plus"></i> Sign Up </a> -->
       <a class="nav-item nav-link desktop-hide my-2 my-sm-0 margin desktop-hide logout" *ngIf="isLogin" (click)="onClickLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
