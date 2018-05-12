@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations'; // important, animation
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -13,8 +12,6 @@ import { app } from 'firebase/app';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { createWiresService } from 'selenium-webdriver/firefox';
-import { ApiClass } from './ApiClass';
-import { Hits } from './Hits';
 import { AuthService} from '../../services/auth.service';
 import { FavouriteService } from '../../services/favourite.service';
 import { Favourite } from '../../services/favourite';
@@ -56,14 +53,13 @@ export class SearchComponent implements OnInit {
   i;
   favourite: Favourite = new Favourite();
   buttonText = 'Add an product';
-  productText = '';
-  productTab = [];
+  productText = ''; /* product that you write down in search */
+  productTab = []; /* array - virtual fridge */
   cookieTab;
-  productsToText = '';
-  apiKey = '&app_id=51498885&app_key=13987527ce597b2b662dc0fa755c4054';
-  apiWebsite = 'https://api.edamam.com';
-  apiRoot = 'https://api.edamam.com/search?q=';
-  data: any;
+  productsToText = ''; /* variable for storing products from array to text with coma */
+  apiKey = '&app_id=51498885&app_key=13987527ce597b2b662dc0fa755c4054'; /* api key and id */
+  apiRoot = 'https://api.edamam.com/search?q='; /* api website with search?q section */
+  data: any; /* variable for storing api results */
 
   constructor(private http: HttpClient, private _cookieService: CookieService, private data2: AuthService
               , private favouriteService: FavouriteService) { }
@@ -91,7 +87,7 @@ export class SearchComponent implements OnInit {
     } else { this.isProduct = true; }
   }
 
-  productsFromCookie() {
+  productsFromCookie() { /* getting products from cookie */
     this.cookieTab = this._cookieService.getAll();
     console.log(this._cookieService.getAll());
     for (this.i = 0; ; this.i++) {
@@ -113,7 +109,7 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  removeItem(i) {
+  removeItem(i) { /* method responsible for remove item from your virtual fridge */
     console.log('Cookie "' + this.productTab[i] + '" usuniete');
     this.productTab.splice(i, 1);
     this._cookieService.remove(i);
@@ -122,14 +118,14 @@ export class SearchComponent implements OnInit {
     console.log(this.productTab);
   }
 
-  getFromApi(url: string) {
+  getFromApi(url: string) {/* get data from api to data variable and write it down in console */
     this.http.get<any>(url).subscribe(posts => {
       this.data = posts;
       console.log(this.data);
     });
 }
 
-  searchRecipes() {
+  searchRecipes() { /* create products separated by comas and create a query for api */
     this.productsToText = '';
     this.productTab.forEach(element => {
       this.productsToText += element + ',';

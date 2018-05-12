@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './ui/home/home.component';
 import { SearchComponent } from './ui/search/search.component';
 /* import { CoreComponent } from './core/core.component'; */
-import { RecipeComponent } from './recipe/recipe.component';
 import { TopNavComponent } from './ui/top-nav/top-nav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -34,7 +33,6 @@ import { AboutComponent } from './about/about.component';
     AppComponent,
     HomeComponent,
     SearchComponent,
-    RecipeComponent,
     TopNavComponent,
     LoginComponent,
     RegisterComponent,
