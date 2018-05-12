@@ -63,6 +63,16 @@
             <i class="fas fa-heart"> Add to Favourites</i>
           </button>
         </div>
+
+        <div *ngIf="!isLoggedIn" >
+            <a routerLink="../login" style="padding-left: 0.4em; padding-right: 0.4em">
+                Would you like to save this recipe in your favorites? <br>
+                Just sign in.
+            </a>
+        </div>
+
+        <br><br>
+
         <a class="a moreInformation" href='{{result.recipe.url}}'>Click for more information</a>
     <div>
 
