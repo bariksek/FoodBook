@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations'; // important, animation
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -13,8 +12,6 @@ import { app } from 'firebase/app';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { createWiresService } from 'selenium-webdriver/firefox';
-import { ApiClass } from './ApiClass';
-import { Hits } from './Hits';
 import { AuthService} from '../../services/auth.service';
 import { FavouriteService } from '../../services/favourite.service';
 import { Favourite } from '../../services/favourite';
