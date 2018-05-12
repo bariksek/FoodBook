@@ -10,7 +10,6 @@ import { SearchComponent } from './ui/search/search.component';
 import { TopNavComponent } from './ui/top-nav/top-nav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { PrivatePageComponent } from './private-page/private-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { AuthService } from './services/auth.service';
 import { AngularFireModule } from 'angularfire2';
@@ -36,7 +35,6 @@ import { AboutComponent } from './about/about.component';
     TopNavComponent,
     LoginComponent,
     RegisterComponent,
-    PrivatePageComponent,
     NotFoundPageComponent,
     FavouritesComponent,
     StatisticsComponent,

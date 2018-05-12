@@ -12,16 +12,13 @@
 
 .members {
   font-size: 20px;
-  text-align:center;
+  text-align: center;
 }
 
-.lista
-{
+.lista {
   list-style-type: none;
-  text-align:center;
-  
+  text-align: center;
 }
-// +
 
 input.btn {
   border: 0;
@@ -29,25 +26,25 @@ input.btn {
   margin: auto;
   width: 90%;
   padding: 1em 2em;
-  background: #A5F883; 
+  background: #A5F883;
   color: #003A61;
   margin-bottom: 1em;
   cursor: pointer;
 }
 
-.btn{
+.btn {
   border: 0;
   display: block;
   margin: auto;
   width: 90%;
   padding: 1em 2em;
-  background: #A5F883; 
+  background: #A5F883;
   color: #003A61;
   margin-bottom: 1em;
 }
 
 .btn:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .column3 {
@@ -60,7 +57,6 @@ input.btn {
     display: grid;
     grid-template-columns: 1fr;
   }
-
 }
 
 @media screen and (max-width: 736px) {

@@ -5,7 +5,6 @@ import { SearchComponent } from './ui/search/search.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FavouritesComponent } from './favourites/favourites.component';
-import { PrivatePageComponent } from './private-page/private-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { AboutComponent } from './about/about.component';
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'private', component: PrivatePageComponent },
   { path: 'favourites', component: FavouritesComponent },
   { path: 'statistics', component: StatisticsComponent },
   { path: '**', component: NotFoundPageComponent },
